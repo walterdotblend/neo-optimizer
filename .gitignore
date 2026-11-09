@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyInstaller & Build artifacts
+build/
+dist/
+*.spec
+
+# Local and OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Video Optimizer temporary files and local caches
+*.encoding_tmp.mkv
+*.temp_meta.mkv
+.optimizer_history.json
+.folder_optimizer_config.json
