@@ -436,7 +436,7 @@ class EncodingThread(QThread):
 
             orig_path = job["v_meta"]["filepath"]
             out_path = job["output_path"]
-            temp_out_path = out_path + ".encoding_tmp.mkv"
+            temp_out_path = out_path + ".neo_tmp"
 
             # Limpiar temporal previo
             if os.path.isfile(temp_out_path):
@@ -1847,7 +1847,7 @@ class ModernVideoOptimizer(QMainWindow):
             return f"Track #{cfg['audio_rel_idx']}"
         pattern = cfg.get("audio_pattern", get_text(L, "default_audio_search"))
         best = find_best_audio_match(audios, pattern)
-        return f"Match: {best['language']}" if best else get_text(L, "status_aud_default")
+        return f"Match: {best.get('lang_pretty') or best.get('raw_lang') or best.get('title') or '#0'}" if best else get_text(L, "status_aud_default")
 
     def _format_sub_plan(self, d_path: str, v_meta: Dict[str, Any]) -> str:
         L = self.current_lang
@@ -1861,7 +1861,7 @@ class ModernVideoOptimizer(QMainWindow):
             return f"Track #{cfg['sub_rel_idx']}"
         pattern = cfg.get("sub_pattern", get_text(L, "default_sub_search"))
         best = find_best_sub_match(subs, pattern)
-        return f"Match: {best['language']}" if best else get_text(L, "status_sub_default")
+        return f"Match: {best.get('lang_pretty') or best.get('raw_lang') or best.get('title') or '#0'}" if best else get_text(L, "status_sub_default")
 
     def _update_global_savings_banner(self):
         L = self.current_lang
@@ -2178,7 +2178,10 @@ class ModernVideoOptimizer(QMainWindow):
                 ver_copy["bitrate"] = str(calc_br)
 
             codec_clean = ver_copy["codec"].replace("_nvenc", "").replace("lib", "").upper()
-            out_name = build_standard_filename(orig_path, res_tag, codec_clean, only_resolution=only_res)
+            if not only_res and v_num == 0:
+                out_name = build_standard_filename(orig_path, "", codec_clean, only_resolution=False)
+            else:
+                out_name = build_standard_filename(orig_path, res_tag, codec_clean, only_resolution=True)
             out_path = os.path.join(d_path, out_name)
 
             if not any(j["output_path"] == out_path and j["status"] in ("Pending", "Pendiente", "Encoding...") for j in self.job_queue):

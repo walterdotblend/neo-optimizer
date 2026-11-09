@@ -548,10 +548,11 @@ def scan_directory_for_videos(root_dir: str) -> Dict[str, Dict[str, Any]]:
 
 def build_standard_filename(original_filepath: str, resolution_tag: str, codec_tag: str = "", only_resolution: bool = True) -> str:
     """
-    Genera el nombre limpio multi-versión para bibliotecas multimedia:
-    Movies/Movie (2019)/Movie (2019) - 1080p.mkv
-    Si el archivo fuente ya contenía un sufijo como '- 1080p' o '- 1080p AV1', lo elimina
-    y lo reemplaza por la resolución seleccionada ('- 720p.mkv').
+    Genera el nombre limpio para bibliotecas multimedia.
+    Si only_resolution es True (por defecto):
+        'Pelicula (2020) - 1080p.mkv'
+    Si only_resolution es False (desactivado por el usuario):
+        'Pelicula (2020).mkv' (sin sufijo de resolución)
     """
     base, _ = os.path.splitext(os.path.basename(original_filepath))
     base = " ".join(base.split())
@@ -564,13 +565,11 @@ def build_standard_filename(original_filepath: str, resolution_tag: str, codec_t
         base = cleaned
 
     clean_base = base
-    res_clean = resolution_tag.replace("4K (2160p)", "2160p").strip()
-    if only_resolution or not codec_tag:
-        version_label = res_clean
-    else:
-        version_label = f"{res_clean} {codec_tag}".strip()
+    if not only_resolution or not resolution_tag:
+        return f"{clean_base}.mkv"
 
-    return f"{clean_base} - {version_label}.mkv"
+    res_clean = resolution_tag.replace("4K (2160p)", "2160p").strip()
+    return f"{clean_base} - {res_clean}.mkv"
 
 # Alias retrocompatible
 build_jellyfin_filename = build_standard_filename
@@ -632,7 +631,7 @@ def build_ffmpeg_encode_command(
 
     # Limpiar título interno (usando el nombre final sin extensión temporal) y etiquetas BPS heredadas del stream de video
     if clean_metadata_title:
-        final_base = os.path.basename(output_path).replace(".encoding_tmp.mkv", "")
+        final_base = re.sub(r'\.(neo_tmp|encoding_tmp|encoding_part|part|tmp).*$', '', os.path.basename(output_path))
         clean_name = os.path.splitext(final_base)[0]
         cmd.extend(["-metadata", f"title={clean_name}"])
     cmd.extend([
