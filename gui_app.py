@@ -960,23 +960,27 @@ class ModernVideoOptimizer(QMainWindow):
         self.btn_add_sel = QPushButton()
         self.btn_add_sel.setObjectName("btn_add_sel")
         self.btn_add_sel.setFixedHeight(36)
+        self.btn_add_sel.setMinimumWidth(100)
         self.btn_add_sel.clicked.connect(self.add_selected_to_queue)
         row_actions.addWidget(self.btn_add_sel)
 
         self.btn_add_all = QPushButton()
         self.btn_add_all.setFixedHeight(36)
+        self.btn_add_all.setMinimumWidth(110)
         self.btn_add_all.clicked.connect(self.add_all_to_queue)
         row_actions.addWidget(self.btn_add_all)
 
         self.btn_start = QPushButton()
         self.btn_start.setObjectName("btn_start")
         self.btn_start.setFixedHeight(36)
+        self.btn_start.setMinimumWidth(100)
         self.btn_start.clicked.connect(self.start_encoding)
         row_actions.addWidget(self.btn_start)
 
         self.btn_pause = QPushButton()
         self.btn_pause.setObjectName("btn_pause")
         self.btn_pause.setFixedHeight(36)
+        self.btn_pause.setMinimumWidth(95)
         self.btn_pause.setEnabled(False)
         self.btn_pause.clicked.connect(self.toggle_pause)
         row_actions.addWidget(self.btn_pause)
@@ -984,6 +988,7 @@ class ModernVideoOptimizer(QMainWindow):
         self.btn_cancel = QPushButton()
         self.btn_cancel.setObjectName("btn_cancel")
         self.btn_cancel.setFixedHeight(36)
+        self.btn_cancel.setMinimumWidth(95)
         self.btn_cancel.setEnabled(False)
         self.btn_cancel.clicked.connect(self.stop_encoding)
         row_actions.addWidget(self.btn_cancel)
@@ -1018,9 +1023,21 @@ class ModernVideoOptimizer(QMainWindow):
         layout_v.setSpacing(6)
 
         header_v = QHBoxLayout()
+        header_v.setSpacing(10)
         self.lbl_profiles_title = QLabel()
         self.lbl_profiles_title.setStyleSheet("font-weight: bold; font-size: 13px; color: #89b4fa;")
         header_v.addWidget(self.lbl_profiles_title)
+
+        # Botón Auto Config prominente y evidente en la cabecera de perfiles/versiones
+        self.btn_auto_config = QPushButton()
+        self.btn_auto_config.setFixedHeight(28)
+        self.btn_auto_config.setStyleSheet(
+            "background-color: #1e3a5f; color: #89b4fa; border: 1px solid #3b82f6; "
+            "border-radius: 6px; font-weight: bold; font-size: 11px; padding: 4px 14px;"
+        )
+        self.btn_auto_config.clicked.connect(self.auto_configure_all_profiles)
+        header_v.addWidget(self.btn_auto_config)
+
         header_v.addStretch()
 
         self.btn_add_ver = QPushButton()
@@ -1147,7 +1164,8 @@ class ModernVideoOptimizer(QMainWindow):
 
         self.btn_remove_sel = QPushButton()
         self.btn_remove_sel.setFixedHeight(26)
-        self.btn_remove_sel.setStyleSheet("background-color: #23273c; color: #f38ba8; border: 1px solid #3b4263; font-size: 11px;")
+        self.btn_remove_sel.setMinimumWidth(110)
+        self.btn_remove_sel.setStyleSheet("background-color: #23273c; color: #f38ba8; border: 1px solid #3b4263; font-size: 11px; padding: 2px 10px;")
         self.btn_remove_sel.clicked.connect(self._ctx_remove_from_tree)
         layout_b.addWidget(self.btn_remove_sel)
 
@@ -1270,6 +1288,8 @@ class ModernVideoOptimizer(QMainWindow):
         self.tabs.setTabText(1, get_text(L, "tab_queue"))
 
         self.lbl_profiles_title.setText(get_text(L, "profiles_title"))
+        self.btn_auto_config.setText(get_text(L, "btn_auto_config_header"))
+        self.btn_auto_config.setToolTip(get_text(L, "btn_auto_tooltip"))
         self.btn_add_ver.setText(get_text(L, "btn_add_version"))
 
         self.lbl_aud_sub_title.setText(get_text(L, "audio_sub_title"))
@@ -1455,8 +1475,9 @@ class ModernVideoOptimizer(QMainWindow):
         r1.addStretch()
 
         btn_del = QPushButton(get_text(L, "btn_del"))
-        btn_del.setFixedSize(75, 22)
-        btn_del.setStyleSheet("background-color: #2d1218; color: #f38ba8; font-size: 10px; border: 1px solid #4a1f26;")
+        btn_del.setMinimumWidth(85)
+        btn_del.setFixedHeight(24)
+        btn_del.setStyleSheet("background-color: #3b1219; color: #f38ba8; font-weight: bold; font-size: 11px; border: 1px solid #5e1f29; border-radius: 5px; padding: 2px 10px;")
         btn_del.clicked.connect(lambda _, b=box: self.remove_version_ui(b))
         btn_del.setVisible(v_idx > 1)
         r1.addWidget(btn_del)
@@ -1471,7 +1492,7 @@ class ModernVideoOptimizer(QMainWindow):
         idx = cb_codec.findText(default_codec)
         if idx >= 0:
             cb_codec.setCurrentIndex(idx)
-        cb_codec.setFixedWidth(135)
+        cb_codec.setFixedWidth(140)
         cb_codec.currentIndexChanged.connect(self._on_settings_change)
         r2.addWidget(cb_codec)
 
@@ -1482,13 +1503,13 @@ class ModernVideoOptimizer(QMainWindow):
         if r_idx >= 0:
             cb_res.setCurrentIndex(r_idx)
         # Ancho ampliado para que '4K (2160p)' entre holgadamente
-        cb_res.setFixedWidth(140)
+        cb_res.setFixedWidth(145)
         cb_res.currentIndexChanged.connect(self._on_settings_change)
         r2.addWidget(cb_res)
 
         r2.addWidget(QLabel(get_text(L, "lbl_bitrate")))
         txt_b = QLineEdit(str(default_bitrate))
-        txt_b.setFixedWidth(75)
+        txt_b.setFixedWidth(80)
         txt_b.setPlaceholderText("Auto")
         txt_b.textChanged.connect(self._on_settings_change)
         r2.addWidget(txt_b)
@@ -1496,7 +1517,7 @@ class ModernVideoOptimizer(QMainWindow):
         # Botón AUTO para códec óptimo y bitrate de calidad equivalente
         btn_auto = QPushButton(get_text(L, "btn_auto"))
         btn_auto.setToolTip(get_text(L, "btn_auto_tooltip"))
-        btn_auto.setFixedSize(65, 26)
+        btn_auto.setFixedSize(70, 26)
         btn_auto.setStyleSheet("background-color: #1a2a40; color: #89b4fa; border: 1px solid #2b456e; border-radius: 5px; font-weight: bold; font-size: 11px;")
         btn_auto.clicked.connect(lambda _, b=txt_b, c=cb_codec, r=cb_res: self._auto_configure_profile(b, c, r))
         r2.addWidget(btn_auto)
@@ -1558,7 +1579,17 @@ class ModernVideoOptimizer(QMainWindow):
             item["lbl_title"].setText(title_txt)
             item["lbl_title"].setStyleSheet(f"font-weight: bold; color: {accent_color}; font-size: 11px;")
             if "btn_del" in item and item["btn_del"]:
+                item["btn_del"].setText(get_text(L, "btn_del"))
                 item["btn_del"].setVisible(total > 1 and idx > 1)
+
+    def auto_configure_all_profiles(self):
+        """Auto-configura de inmediato el perfil óptimo de GPU y bitrate de calidad equivalente desde la cabecera."""
+        prof = self.hardware_profile
+        rec_codec = prof["recommended_codec"]
+        if not self.active_version_widgets:
+            self.add_version_ui(default_codec=rec_codec, default_res="Original")
+        v0 = self.active_version_widgets[0]
+        self._auto_configure_profile(v0["bitrate"], v0["codec"], v0["res"])
 
     def _auto_configure_profile(self, txt_b: QLineEdit, cb_codec: QComboBox, cb_res: QComboBox):
         """Aplica automáticamente el mejor códec para la GPU y el bitrate equivalente manteniendo la calidad."""
@@ -1728,7 +1759,7 @@ class ModernVideoOptimizer(QMainWindow):
                 elif is_v_multi:
                     fg_color = QColor("#f5bde6")
 
-                item_vid = QTableWidgetItem(f"   󰈔 {v_meta['filename']}")
+                item_vid = QTableWidgetItem(f"    {v_meta['filename']}")
                 item_vid.setData(Qt.ItemDataRole.UserRole, f"vid_{v_path}")
                 item_vid.setForeground(fg_color)
                 item_vid.setBackground(bg_color)
