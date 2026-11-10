@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neo Optimizer — Suite de Optimización y Transcodificación de Video AV1/HEVC</title>
-  <meta name="description" content="Suite de transcodificación de video de alto rendimiento con aceleración por hardware AV1/HEVC, diseño r/unixporn Tokyo Night y aislamiento anti-indexado para Jellyfin y Plex.">
+  <title>Neo Optimizer — High-Performance AV1 & HEVC Video Transcoding Suite</title>
+  <meta name="description" content="High-performance hardware-accelerated AV1/HEVC video transcoding suite with Tokyo Night r/unixporn aesthetics, instant zero-lag PyQt6 C++ UI, and anti-indexing shielding for Jellyfin & Plex.">
   
   <!-- OpenGraph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://walterdotblend.github.io/neo-optimizer/">
   <meta property="og:title" content="Neo Optimizer — Video Transcoding Suite (PyQt6 Rice Edition)">
-  <meta property="og:description" content="Reduce hasta un 65% de espacio con aceleración AV1 NVENC, C++ nativo y aislamiento .neo_tmp.">
+  <meta property="og:description" content="Slash up to 65% disk space with AV1 NVENC hardware acceleration, native C++ PyQt6 UI, and .neo_tmp anti-indexing shield.">
   <meta property="og:image" content="screenshot_library.png">
   
   <link rel="icon" type="image/x-icon" href="app_icon.ico">
@@ -1067,34 +1067,34 @@
         <ul class="nav-links">
           <li><a href="#pipeline" data-i18n="nav_pipeline">Pipeline</a></li>
           <li><a href="#showcase" data-i18n="nav_showcase">Showcase</a></li>
-          <li><a href="#calculator" data-i18n="nav_calculator">Calculadora</a></li>
-          <li><a href="#features" data-i18n="nav_features">Características</a></li>
-          <li><a href="#download" data-i18n="nav_download">Descarga</a></li>
+          <li><a href="#calculator" data-i18n="nav_calculator">Calculator</a></li>
+          <li><a href="#features" data-i18n="nav_features">Features</a></li>
+          <li><a href="#download" data-i18n="nav_download">Download</a></li>
         </ul>
 
         <div class="nav-actions">
           <!-- Language Selector -->
           <div class="lang-selector">
-            <button class="lang-select-btn" id="langBtn" onclick="toggleLangMenu()">
-              <span id="curLangFlag">🇪🇸</span>
-              <span id="curLangCode">ES</span>
+            <button class="lang-select-btn" id="langBtn" onclick="toggleLangMenu()" aria-label="Change Language">
+              <span id="curLangFlag">🇺🇸</span>
+              <span id="curLangCode">EN</span>
               <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg>
             </button>
             <div class="lang-dropdown" id="langDropdown">
-              <button class="lang-opt active" onclick="setLanguage('es')">
-                <span>🇪🇸 Español</span>
-                <span>ES</span>
-              </button>
-              <button class="lang-opt" onclick="setLanguage('en')">
+              <button class="lang-opt active" id="btnLangEn" onclick="setLanguage('en')">
                 <span>🇺🇸 English</span>
                 <span>EN</span>
+              </button>
+              <button class="lang-opt" id="btnLangEs" onclick="setLanguage('es')">
+                <span>🇪🇸 Español</span>
+                <span>ES</span>
               </button>
             </div>
           </div>
 
           <a href="https://github.com/walterdotblend/neo-optimizer/releases" class="btn-nav-primary">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-            <span data-i18n="nav_btn_get">Descargar .EXE</span>
+            <span data-i18n="nav_btn_get">Download .EXE</span>
           </a>
         </div>
       </nav>
@@ -1108,22 +1108,22 @@
       </div>
 
       <h1 data-i18n="hero_title">
-        Transcodificación de Video <br>
-        <span class="gradient-text">Ultra-Rápida</span> y <span class="purple-text">Sin Pérdida</span>
+        High-Performance Video <br>
+        <span class="gradient-text">Transcoding</span> & <span class="purple-text">Lossless Audio</span>
       </h1>
 
       <p data-i18n="hero_subtitle">
-        Suite de optimización multimedia de alto rendimiento para Jellyfin y Plex. Reduce hasta un <strong>65% de espacio</strong> con aceleración por hardware AV1 y HEVC, redimensionamiento C++ instantáneo y diseño r/unixporn.
+        Ultimate multimedia optimization suite engineered for Jellyfin and Plex. Slash up to <strong>65% storage</strong> with hardware AV1 and HEVC, instant zero-lag PyQt6 UI, and r/unixporn dark rice aesthetics.
       </p>
 
       <div class="hero-ctas">
         <a href="https://github.com/walterdotblend/neo-optimizer/releases" class="btn-hero-main">
           <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-          <span data-i18n="btn_download_exe">Descargar NeoOptimizer.exe (v3.0)</span>
+          <span data-i18n="btn_download_exe">Download NeoOptimizer.exe (v3.0)</span>
         </a>
         <a href="https://github.com/walterdotblend/neo-optimizer" target="_blank" class="btn-hero-sec">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          <span data-i18n="btn_github_repo">Repositorio en GitHub</span>
+          <span data-i18n="btn_github_repo">View on GitHub</span>
         </a>
       </div>
 
@@ -1135,15 +1135,15 @@
         </div>
         <div class="stat-item">
           <div class="stat-val green">~60%</div>
-          <div class="stat-lbl" data-i18n="stat_2">Ahorro de Almacenamiento</div>
+          <div class="stat-lbl" data-i18n="stat_2">Storage Space Saved</div>
         </div>
         <div class="stat-item">
           <div class="stat-val purple">0 ms</div>
-          <div class="stat-lbl" data-i18n="stat_3">Lag de UI (PyQt6 C++)</div>
+          <div class="stat-lbl" data-i18n="stat_3">UI Latency (PyQt6 C++)</div>
         </div>
         <div class="stat-item">
           <div class="stat-val" style="color: var(--accent-orange);">.neo_tmp</div>
-          <div class="stat-lbl" data-i18n="stat_4">Anti-Indexado Jellyfin</div>
+          <div class="stat-lbl" data-i18n="stat_4">Jellyfin Shielded</div>
         </div>
       </div>
     </section>
@@ -1151,9 +1151,9 @@
     <!-- Animated Interactive Transcoding Pipeline -->
     <section class="pipeline-section" id="pipeline">
       <div class="section-header">
-        <span class="section-tag" data-i18n="pipe_tag">PIPELINE INTERACTIVO</span>
-        <h2 class="section-title" data-i18n="pipe_title">El Flujo de Trabajo en 4 Etapas</h2>
-        <p class="section-desc" data-i18n="pipe_desc">Haz clic o pasa el cursor sobre cada nodo para inspeccionar la arquitectura en tiempo real.</p>
+        <span class="section-tag" data-i18n="pipe_tag">INTERACTIVE PIPELINE</span>
+        <h2 class="section-title" data-i18n="pipe_title">The 4-Stage Transcoding Flow</h2>
+        <p class="section-desc" data-i18n="pipe_desc">Click or hover over each node to inspect real-time architecture and telemetry.</p>
       </div>
 
       <div class="pipe-container">
@@ -1165,42 +1165,42 @@
           <div class="pipe-step-node active" id="pNode0" onclick="selectPipeStep(0)">
             <div class="pipe-node-icon">🔍</div>
             <div class="pipe-step-label" data-i18n="step_0_title">1. FFprobe Scan</div>
-            <div class="pipe-step-timing">~120ms / file</div>
+            <div class="pipe-step-timing" data-i18n="step_0_sub">~120ms / file</div>
           </div>
 
           <div class="pipe-step-node" id="pNode1" onclick="selectPipeStep(1)">
             <div class="pipe-node-icon">⚡</div>
             <div class="pipe-step-label" data-i18n="step_1_title">2. Auto Config</div>
-            <div class="pipe-step-timing">Dynamic GPU</div>
+            <div class="pipe-step-timing" data-i18n="step_1_sub">Dynamic GPU</div>
           </div>
 
           <div class="pipe-step-node" id="pNode2" onclick="selectPipeStep(2)">
             <div class="pipe-node-icon">🛡️</div>
             <div class="pipe-step-label" data-i18n="step_2_title">3. .neo_tmp Shield</div>
-            <div class="pipe-step-timing">NVENC Encoded</div>
+            <div class="pipe-step-timing" data-i18n="step_2_sub">NVENC Encoded</div>
           </div>
 
           <div class="pipe-step-node" id="pNode3" onclick="selectPipeStep(3)">
             <div class="pipe-node-icon">✨</div>
             <div class="pipe-step-label" data-i18n="step_3_title">4. Atomic Swap</div>
-            <div class="pipe-step-timing">Zero Leak</div>
+            <div class="pipe-step-timing" data-i18n="step_3_sub">Zero Leak</div>
           </div>
         </div>
 
         <!-- Pipeline Display Screen -->
         <div class="pipe-screen">
           <div class="pipe-screen-left">
-            <h4 id="pipeTitle">Etapa 1: Análisis Profundo con FFprobe</h4>
-            <p id="pipeDesc">Inspecciona contenedores MKV/MP4 extrayendo etiquetas BPS exactas de bitrate, detección de perfiles HDR10 / Dolby Vision y conteo de pistas de audio y subtítulos sin decodificación lenta.</p>
+            <h4 id="pipeTitle">Stage 1: Deep Container Scan with FFprobe</h4>
+            <p id="pipeDesc">Inspects MKV/MP4 containers extracting exact BPS bitrate tags, HDR10 / Dolby Vision profiles, and stream mapping without slow full decode.</p>
             <div class="pipe-hud-tags" id="pipeTags">
               <span class="pipe-hud-tag">MKV BPS Tags</span>
               <span class="pipe-hud-tag">HDR10 / SDR</span>
-              <span class="pipe-hud-tag">Multi-Track Audio</span>
+              <span class="pipe-hud-tag">Stream Mapping</span>
             </div>
           </div>
 
           <div class="pipe-screen-right">
-            <div style="color: var(--text-dim); margin-bottom: 6px;">// TELEMETRÍA EN VIVO</div>
+            <div style="color: var(--text-dim); margin-bottom: 6px;" data-i18n="pipe_telemetry_head">// LIVE TELEMETRY</div>
             <div id="pipeTelemetry" style="color: var(--accent-cyan); line-height: 1.6;">
               STATUS: <strong style="color: #fff;">ANALYZING</strong><br>
               BITRATE: <strong style="color: #fff;">EXACT BPS</strong><br>
@@ -1210,12 +1210,12 @@
         </div>
 
         <div class="pipe-ctrl-bar">
-          <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-dim);">
-            Modo interactivo • Selección automática de nodos
+          <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-dim);" data-i18n="pipe_ctrl_info">
+            Interactive mode • Click nodes to navigate
           </div>
           <div style="display: flex; gap: 8px;">
-            <button class="pipe-btn-ctrl" onclick="prevPipeStep()">◀ Anterior</button>
-            <button class="pipe-btn-ctrl" onclick="nextPipeStep()">Siguiente ▶</button>
+            <button class="pipe-btn-ctrl" onclick="prevPipeStep()" data-i18n="pipe_btn_prev">◀ Previous</button>
+            <button class="pipe-btn-ctrl" onclick="nextPipeStep()" data-i18n="pipe_btn_next">Next ▶</button>
           </div>
         </div>
       </div>
@@ -1231,10 +1231,10 @@
         </div>
         <div class="window-title">neo-optimizer@archlinux: ~ (PyQt6 Tokyo Night Obsidian Rice)</div>
         <div class="showcase-seg-switch">
-          <button class="showcase-seg-btn active" id="tabLib" onclick="switchTab('lib')">
+          <button class="showcase-seg-btn active" id="tabLib" onclick="switchTab('lib')" data-i18n="showcase_tab_lib">
             ◈ 01 // LIBRARY & PROFILES
           </button>
-          <button class="showcase-seg-btn" id="tabQ" onclick="switchTab('q')">
+          <button class="showcase-seg-btn" id="tabQ" onclick="switchTab('q')" data-i18n="showcase_tab_q">
             ◈ 02 // QUEUE & TELEMETRY HUD
           </button>
         </div>
@@ -1244,64 +1244,11 @@
       </div>
     </section>
 
-    <!-- Live Calculator Section -->
-    <section class="calculator-section" id="calculator">
-      <div class="section-header">
-        <span class="section-tag" data-i18n="calc_tag">CALCULADORA EN TIEMPO REAL</span>
-        <h2 class="section-title" data-i18n="calc_title">Simulador de Ahorro y Bitrate Equivalente</h2>
-        <p class="section-desc" data-i18n="calc_desc">Comprueba cuánto almacenamiento liberarás en tu biblioteca multimedia manteniendo idéntica calidad perceptiva.</p>
-      </div>
-
-      <div class="calc-card">
-        <div class="calc-grid">
-          <div>
-            <div class="calc-group">
-              <div class="calc-row-lbl">
-                <span data-i18n="calc_lbl_orig">Bitrate Original (H.264 / AVC):</span>
-                <span class="val" id="valOrigBr">8,000 kbps</span>
-              </div>
-              <input type="range" id="inputOrigBr" min="2000" max="25000" step="500" value="8000" oninput="runCalculator()">
-            </div>
-
-            <div class="calc-group">
-              <div class="calc-row-lbl">
-                <span data-i18n="calc_lbl_hours">Horas estimadas de biblioteca:</span>
-                <span class="val" id="valHours">50 horas</span>
-              </div>
-              <input type="range" id="inputHours" min="5" max="300" step="5" value="50" oninput="runCalculator()">
-            </div>
-
-            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); line-height: 1.5;">
-              * Modelo matemático basado en equivalencia perceptual SSIM/VMAF entre H.264 y AV1 NVENC Ada Lovelace.
-            </div>
-          </div>
-
-          <div class="calc-result-box">
-            <div class="res-badge" data-i18n="calc_res_badge">Reducción de Espacio Estimada</div>
-            <div class="res-pct" id="resPct">-56%</div>
-            <div class="res-sub">
-              Bitrate AV1 Recomendado: <span id="resTargetBr">3,500 kbps</span> (VMAF 95+)
-            </div>
-            <div class="res-details">
-              <div class="res-col">
-                <div class="dt-label" data-i18n="calc_dt_orig">Peso Original:</div>
-                <div class="dt-val" id="resOrigSize">180.0 GB</div>
-              </div>
-              <div class="res-col">
-                <div class="dt-label" data-i18n="calc_dt_neo">Con Neo Optimizer:</div>
-                <div class="dt-val" style="color: var(--accent-green-bright);" id="resTargetSize">78.8 GB</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Dynamic Hardware Strip -->
     <div class="hw-selector-strip" id="hardware">
       <div style="display: flex; align-items: center; gap: 10px;">
-        <span style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: #fff;">
-          ⚡ DETECCIÓN DINÁMICA:
+        <span style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: #fff;" data-i18n="hw_label">
+          ⚡ DYNAMIC DETECTION:
         </span>
         <div class="hw-chips-list">
           <button class="hw-chip-btn active" onclick="pickHw('ada', this)">NVIDIA RTX 40</button>
@@ -1312,56 +1259,111 @@
         </div>
       </div>
       <div class="hw-readout" id="hwReadout">
-        GPU: RTX 4070 SUPER ➔ Códec: av1_nvenc (Hardware AV1) @ 3500 kbps
+        GPU: NVIDIA RTX 4070 SUPER ➔ Codec: av1_nvenc (Hardware AV1) @ 3500 kbps
       </div>
     </div>
+
+    <!-- Live Calculator Section -->
+    <section class="calculator-section" id="calculator">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="calc_tag">REAL-TIME CALCULATOR</span>
+        <h2 class="section-title" data-i18n="calc_title">Live Quality & Savings Simulator</h2>
+        <p class="section-desc" data-i18n="calc_desc">Simulate storage reduction and equivalent AV1 bitrates with identical perceptual visual quality.</p>
+      </div>
+
+      <div class="calc-card">
+        <div class="calc-grid">
+          <div>
+            <div class="calc-group">
+              <div class="calc-row-lbl">
+                <span data-i18n="calc_lbl_orig">Original Bitrate (H.264 / AVC):</span>
+                <span class="val" id="valOrigBr">8,000 kbps</span>
+              </div>
+              <input type="range" id="inputOrigBr" min="2000" max="25000" step="500" value="8000" oninput="runCalculator()">
+            </div>
+
+            <div class="calc-group">
+              <div class="calc-row-lbl">
+                <span data-i18n="calc_lbl_hours">Estimated Library Runtime:</span>
+                <span class="val" id="valHours">50 hours</span>
+              </div>
+              <input type="range" id="inputHours" min="5" max="300" step="5" value="50" oninput="runCalculator()">
+            </div>
+
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); line-height: 1.5;" data-i18n="calc_note">
+              * Mathematical model based on perceptual SSIM/VMAF parity between H.264 and AV1 NVENC Ada Lovelace.
+            </div>
+          </div>
+
+          <div class="calc-result-box">
+            <div class="res-badge" data-i18n="calc_res_badge">Estimated Storage Reduction</div>
+            <div class="res-pct" id="resPct">-56%</div>
+
+            <div class="dt-row">
+              <div class="dt-col">
+                <div class="dt-label" data-i18n="calc_dt_target">Equivalent Target Bitrate:</div>
+                <div class="dt-val" id="resTargetBr">3,520 kbps</div>
+              </div>
+              <div class="dt-col">
+                <div class="dt-label" data-i18n="calc_dt_orig">Original Size:</div>
+                <div class="dt-val" style="color: var(--text-dim);" id="resOrigSize">180.0 GB</div>
+              </div>
+              <div class="dt-col">
+                <div class="dt-label" data-i18n="calc_dt_neo">With Neo Optimizer:</div>
+                <div class="dt-val" style="color: var(--accent-green-bright);" id="resTargetSize">79.2 GB</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Feature Bento Matrix -->
     <section class="bento-features" id="features">
       <div class="bento-card" style="--card-accent: var(--accent-cyan);">
         <div class="bento-icon">⚡</div>
-        <h4 class="bento-title" data-i18n="feat_1_title">Detección Dinámica de GPU</h4>
-        <p class="bento-desc" data-i18n="feat_1_desc">Analiza tu gráfica al arrancar. Si soporta AV1 NVENC lo activa por defecto; si tienes series anteriores (RTX 30/20) conmuta instantáneamente al mejor perfil HEVC.</p>
+        <h4 class="bento-title" data-i18n="feat_1_title">Dynamic GPU Detection</h4>
+        <p class="bento-desc" data-i18n="feat_1_desc">Auto-analyzes hardware at boot. Ada Lovelace GPUs enable hardware AV1 NVENC; Ampere/Turing series seamlessly fallback to optimal HEVC NVENC.</p>
         <span class="bento-tag" style="color: var(--accent-cyan);">NVENC • QSV • AMF</span>
       </div>
 
       <div class="bento-card" style="--card-accent: var(--accent-purple);">
         <div class="bento-icon">🛡️</div>
-        <h4 class="bento-title" data-i18n="feat_2_title">Aislamiento Anti-Indexado</h4>
-        <p class="bento-desc" data-i18n="feat_2_desc">Los archivos temporales usan la extensión oculta <code>.neo_tmp</code> con matroska forzado. Jellyfin y Plex jamás detectarán videos a medio procesar.</p>
+        <h4 class="bento-title" data-i18n="feat_2_title">Anti-Indexing Shield</h4>
+        <p class="bento-desc" data-i18n="feat_2_desc">In-progress encodes are locked in hidden <code>.neo_tmp</code> containers with forced Matroska structure. Jellyfin and Plex will never ingest partial or corrupt videos.</p>
         <span class="bento-tag" style="color: var(--accent-purple);">Safe Media Servers</span>
       </div>
 
       <div class="bento-card" style="--card-accent: var(--accent-orange);">
         <div class="bento-icon">🎧</div>
-        <h4 class="bento-title" data-i18n="feat_3_title">Subtítulos Limpios</h4>
-        <p class="bento-desc" data-i18n="feat_3_desc">Opción exclusiva <em>"🚫 Ningún subtítulo por defecto"</em> (<code>-disposition:s:i 0</code>). Conserva todas las pistas en el MKV pero desactivadas durante el arranque.</p>
+        <h4 class="bento-title" data-i18n="feat_3_title">Clean Subtitle Dispositions</h4>
+        <p class="bento-desc" data-i18n="feat_3_desc">Exclusive <em>"🚫 No default subtitle"</em> option (<code>-disposition:s:i 0</code>). Preserves all subtitle tracks inside MKV while keeping player playback unforced.</p>
         <span class="bento-tag" style="color: var(--accent-orange);">-disposition:s:i 0</span>
       </div>
 
       <div class="bento-card" style="--card-accent: var(--accent-red);">
         <div class="bento-icon">🌙</div>
-        <h4 class="bento-title" data-i18n="feat_4_title">Acciones al Finalizar</h4>
-        <p class="bento-desc" data-i18n="feat_4_desc">Apaga, hiberna o suspende tu PC al terminar una cola larga de madrugada, con aviso acústico y cuenta regresiva de 30 segundos cancelable.</p>
+        <h4 class="bento-title" data-i18n="feat_4_title">Post-Processing Actions</h4>
+        <p class="bento-desc" data-i18n="feat_4_desc">Auto shutdown, hibernate, or sleep upon queue completion, featuring an audible warning and 30-second cancellation countdown.</p>
         <span class="bento-tag" style="color: var(--accent-red);">30s Safety Countdown</span>
       </div>
     </section>
 
     <!-- Download Section -->
     <section class="download-section" id="download">
-      <h3 data-i18n="dl_title">Descarga Standalone Portable</h3>
-      <p data-i18n="dl_desc">Ejecutable de 64 bits para Windows. No requiere Python ni configuración de dependencias.</p>
+      <h3 data-i18n="dl_title">Portable Standalone Download</h3>
+      <p data-i18n="dl_desc">Single-file 64-bit Windows executable. Zero Python installation or PATH configuration required.</p>
       
       <a href="https://github.com/walterdotblend/neo-optimizer/releases" class="btn-hero-main" style="padding: 14px 38px;">
         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-        <span data-i18n="dl_btn">Descargar NeoOptimizer.exe (v3.0)</span>
+        <span data-i18n="dl_btn">Download NeoOptimizer.exe (v3.0)</span>
       </a>
 
       <div>
         <div class="term-box">
           <span style="color: var(--accent-cyan);">$</span>
           <span>git clone https://github.com/walterdotblend/neo-optimizer.git</span>
-          <button class="btn-copy" id="btnCopy" onclick="copyCloneCmd()">Copiar</button>
+          <button class="btn-copy" id="btnCopy" onclick="copyCloneCmd()" data-i18n="term_copy_btn">Copy</button>
         </div>
       </div>
     </section>
@@ -1369,12 +1371,12 @@
     <!-- Footer -->
     <footer>
       <div>
-        ◈ NEO OPTIMIZER // Desarrollado por <a href="https://github.com/walterdotblend" target="_blank" style="font-weight: 700; color: #fff;">walterdotblend</a>
+        <span data-i18n="footer_built">◈ NEO OPTIMIZER // Engineered by</span> <a href="https://github.com/walterdotblend" target="_blank" style="font-weight: 700; color: #fff;">walterdotblend</a>
       </div>
       <div>
         <a href="https://github.com/walterdotblend/neo-optimizer" target="_blank">GitHub</a> • 
-        <a href="https://github.com/walterdotblend/neo-optimizer/releases" target="_blank">Releases</a> • 
-        Licencia MIT
+        <a href="https://github.com/walterdotblend/neo-optimizer/releases" target="_blank" data-i18n="footer_releases">Releases</a> • 
+        <span data-i18n="footer_mit">MIT License</span>
       </div>
     </footer>
   </div>
@@ -1440,36 +1442,44 @@
     // 2. Interactive Pipeline Engine
     const pipeSteps = [
       {
-        title_es: "Etapa 1: Análisis Profundo con FFprobe",
         title_en: "Stage 1: Deep Container Scan with FFprobe",
-        desc_es: "Inspecciona contenedores MKV/MP4 extrayendo etiquetas BPS exactas de bitrate, detección de perfiles HDR10 / Dolby Vision y mapeo de pistas de audio y subtítulos.",
+        title_es: "Etapa 1: Análisis Profundo con FFprobe",
         desc_en: "Inspects MKV/MP4 containers extracting exact BPS bitrate tags, HDR10 / Dolby Vision profiles, and stream mapping without slow full decode.",
-        tags: ["MKV BPS Tags", "HDR10 / Dolby", "Stream Mapping"],
-        telemetry: "STATUS: ANALYZING<br>BITRATE: EXACT BPS<br>STREAM 0:0: hevc (Main 10)"
+        desc_es: "Inspecciona contenedores MKV/MP4 extrayendo etiquetas BPS exactas de bitrate, detección de perfiles HDR10 / Dolby Vision y mapeo de pistas sin decodificación lenta.",
+        tags_en: ["MKV BPS Tags", "HDR10 / SDR", "Stream Mapping"],
+        tags_es: ["Etiquetas BPS MKV", "HDR10 / Dolby", "Mapeo de Pistas"],
+        telemetry_en: "STATUS: <strong style='color:#fff;'>ANALYZING</strong><br>BITRATE: <strong style='color:#fff;'>EXACT BPS</strong><br>STREAM 0:0: <strong style='color:#fff;'>hevc (Main 10)</strong>",
+        telemetry_es: "ESTADO: <strong style='color:#fff;'>ANALIZANDO</strong><br>BITRATE: <strong style='color:#fff;'>BPS EXACTO</strong><br>STREAM 0:0: <strong style='color:#fff;'>hevc (Main 10)</strong>"
       },
       {
-        title_es: "Etapa 2: Detección Dinámica de GPU & Auto-Bitrate",
         title_en: "Stage 2: Dynamic GPU Detection & Auto-Bitrate",
-        desc_es: "Analiza el silicio gráfico del equipo. Si detecta NVIDIA Ada Lovelace activa AV1 NVENC por hardware a 3500 kbps (1080p); si es RTX 30 activa HEVC NVENC con calidad equivalente.",
-        desc_en: "Analyzes host GPU silicon. Detects Ada Lovelace for hardware AV1 NVENC @ 3500 kbps; switches to HEVC NVENC for Ampere/Turing with equivalent visual fidelity.",
-        tags: ["NVENC AV1 8-bit", "Ada Lovelace", "Auto Quality Match"],
-        telemetry: "GPU: RTX 4070 SUPER<br>ENCODER: av1_nvenc<br>RATE_CONTROL: VBR @ 3500k"
+        title_es: "Etapa 2: Detección Dinámica de GPU y Auto-Bitrate",
+        desc_en: "Analyzes host GPU silicon. Detects Ada Lovelace for hardware AV1 NVENC @ 3500 kbps (1080p); switches to HEVC NVENC for Ampere/Turing with equivalent visual fidelity.",
+        desc_es: "Analiza el silicio gráfico del equipo. Detecta Ada Lovelace para AV1 NVENC por hardware a 3500 kbps (1080p); activa HEVC NVENC para Ampere/Turing con fidelidad visual equivalente.",
+        tags_en: ["NVENC AV1 8-bit", "Ada Lovelace", "Auto Quality Match"],
+        tags_es: ["NVENC AV1 8-bit", "Ada Lovelace", "Ajuste Calidad Auto"],
+        telemetry_en: "GPU: <strong style='color:#fff;'>RTX 4070 SUPER</strong><br>ENCODER: <strong style='color:#fff;'>av1_nvenc</strong><br>RATE_CONTROL: <strong style='color:#fff;'>VBR @ 3500k</strong>",
+        telemetry_es: "GPU: <strong style='color:#fff;'>RTX 4070 SUPER</strong><br>CODIFICADOR: <strong style='color:#fff;'>av1_nvenc</strong><br>CONTROL_RATE: <strong style='color:#fff;'>VBR @ 3500k</strong>"
       },
       {
-        title_es: "Etapa 3: Codificación Aislada en .neo_tmp",
         title_en: "Stage 3: Protected Encoding in .neo_tmp Container",
+        title_es: "Etapa 3: Codificación Aislada en Contenedor .neo_tmp",
+        desc_en: "The transcode output is locked in an isolated container with a temporary hidden extension. Jellyfin and Plex completely ignore it until 100% complete.",
         desc_es: "El archivo de salida se codifica en un contenedor aislado con extensión temporal oculta. Jellyfin y Plex ignoran completamente el archivo hasta que esté 100% terminado.",
-        desc_en: "The transcode output is locked in an isolated container with a temporary hidden extension. Jellyfin and Plex ignore it until 100% complete.",
-        tags: [".neo_tmp Shield", "Zero Jellyfin Leaks", "Hardware Encode"],
-        telemetry: "PROCESS: FFMPEG ACTIVE<br>TEMP: Episode.mkv.neo_tmp<br>SPEED: 4.8x (185 FPS)"
+        tags_en: [".neo_tmp Shield", "Zero Jellyfin Leaks", "Hardware Encode"],
+        tags_es: ["Blindaje .neo_tmp", "Cero Fugas Jellyfin", "Codificación HW"],
+        telemetry_en: "PROCESS: <strong style='color:#fff;'>FFMPEG ACTIVE</strong><br>TEMP: <strong style='color:#fff;'>Episode.mkv.neo_tmp</strong><br>SPEED: <strong style='color:#fff;'>4.8x (185 FPS)</strong>",
+        telemetry_es: "PROCESO: <strong style='color:#fff;'>FFMPEG ACTIVO</strong><br>TEMP: <strong style='color:#fff;'>Episodio.mkv.neo_tmp</strong><br>VELOCIDAD: <strong style='color:#fff;'>4.8x (185 FPS)</strong>"
       },
       {
-        title_es: "Etapa 4: Reemplazo Atómico y Limpieza",
         title_en: "Stage 4: Atomic Swap & Metadata Cleansing",
-        desc_es: "Al finalizar el fotograma final, el archivo se renombra instantáneamente a .mkv. Se aplican las disposiciones de subtítulos limpios y se purgan títulos embebidos no deseados.",
+        title_es: "Etapa 4: Reemplazo Atómico y Limpieza de Metadatos",
         desc_en: "Upon final frame encode, the file atomically renames to .mkv. Clean subtitle dispositions are applied and embedded titles are sanitized.",
-        tags: ["Atomic Swap", "-disposition:s:i 0", "Zero-Copy Clean"],
-        telemetry: "STATUS: COMPLETED (100%)<br>SWAP: Instantaneous<br>SAVINGS: -58% Storage"
+        desc_es: "Al finalizar el fotograma final, el archivo se renombra instantáneamente a .mkv. Se aplican las disposiciones de subtítulos limpios y se purgan títulos embebidos.",
+        tags_en: ["Atomic Swap", "-disposition:s:i 0", "Zero-Copy Clean"],
+        tags_es: ["Reemplazo Atómico", "-disposition:s:i 0", "Limpieza Sin Copia"],
+        telemetry_en: "STATUS: <strong style='color:#fff;'>COMPLETED (100%)</strong><br>SWAP: <strong style='color:#fff;'>Instantaneous</strong><br>SAVINGS: <strong style='color:#fff;'>-58% Storage</strong>",
+        telemetry_es: "ESTADO: <strong style='color:#fff;'>COMPLETADO (100%)</strong><br>REEMPLAZO: <strong style='color:#fff;'>Instantáneo</strong><br>AHORRO: <strong style='color:#fff;'>-58% Espacio</strong>"
       }
     ];
 
@@ -1492,33 +1502,44 @@
 
     function updatePipeUI() {
       const laser = document.getElementById('pipeLaser');
-      laser.style.width = (currentStep / (pipeSteps.length - 1)) * 100 + '%';
+      if (laser) {
+        laser.style.width = (currentStep / (pipeSteps.length - 1)) * 100 + '%';
+      }
 
       for (let i = 0; i < pipeSteps.length; i++) {
         const node = document.getElementById('pNode' + i);
-        if (i === currentStep) {
-          node.className = 'pipe-step-node active';
-        } else if (i < currentStep) {
-          node.className = 'pipe-step-node completed';
-        } else {
-          node.className = 'pipe-step-node';
+        if (node) {
+          if (i === currentStep) {
+            node.className = 'pipe-step-node active';
+          } else if (i < currentStep) {
+            node.className = 'pipe-step-node completed';
+          } else {
+            node.className = 'pipe-step-node';
+          }
         }
       }
 
       const st = pipeSteps[currentStep];
       const lang = curLang;
-      document.getElementById('pipeTitle').innerText = lang === 'es' ? st.title_es : st.title_en;
-      document.getElementById('pipeDesc').innerText = lang === 'es' ? st.desc_es : st.desc_en;
-      document.getElementById('pipeTelemetry').innerHTML = st.telemetry;
-
+      const titleEl = document.getElementById('pipeTitle');
+      const descEl = document.getElementById('pipeDesc');
+      const teleEl = document.getElementById('pipeTelemetry');
       const tagContainer = document.getElementById('pipeTags');
-      tagContainer.innerHTML = '';
-      st.tags.forEach(t => {
-        const span = document.createElement('span');
-        span.className = 'pipe-hud-tag';
-        span.innerText = t;
-        tagContainer.appendChild(span);
-      });
+
+      if (titleEl) titleEl.innerText = lang === 'es' ? st.title_es : st.title_en;
+      if (descEl) descEl.innerText = lang === 'es' ? st.desc_es : st.desc_en;
+      if (teleEl) teleEl.innerHTML = lang === 'es' ? st.telemetry_es : st.telemetry_en;
+
+      if (tagContainer) {
+        tagContainer.innerHTML = '';
+        const tags = lang === 'es' ? st.tags_es : st.tags_en;
+        tags.forEach(t => {
+          const span = document.createElement('span');
+          span.className = 'pipe-hud-tag';
+          span.innerText = t;
+          tagContainer.appendChild(span);
+        });
+      }
     }
 
     // 3. Showcase Tab Switcher
@@ -1569,18 +1590,37 @@
     }
 
     // 5. Hardware Switcher
+    let currentHwKey = 'ada';
+
     const hwProfiles = {
-      ada: "GPU: NVIDIA RTX 4070 SUPER ➔ Códec: av1_nvenc (Hardware AV1) @ 3500 kbps",
-      ampere: "GPU: NVIDIA RTX 3080 / 2070 ➔ Códec: hevc_nvenc (Hardware H.265) @ 4500 kbps",
-      arc: "GPU: Intel Arc A770 / A750 ➔ Códec: av1_qsv (QuickSync AV1) @ 3500 kbps",
-      amd: "GPU: AMD Radeon RX 7900 / 7800 ➔ Códec: av1_amf (RDNA3 Hardware AV1) @ 3600 kbps",
-      cpu: "Procesador (Sin GPU Dedicada) ➔ Códec: libsvtav1 (CPU Multihilo) @ 3200 kbps"
+      en: {
+        ada: "GPU: NVIDIA RTX 4070 SUPER ➔ Codec: av1_nvenc (Hardware AV1) @ 3500 kbps",
+        ampere: "GPU: NVIDIA RTX 3080 / 2070 ➔ Codec: hevc_nvenc (Hardware H.265) @ 4500 kbps",
+        arc: "GPU: Intel Arc A770 / A750 ➔ Codec: av1_qsv (QuickSync AV1) @ 3500 kbps",
+        amd: "GPU: AMD Radeon RX 7900 / 7800 ➔ Codec: av1_amf (RDNA3 Hardware AV1) @ 3600 kbps",
+        cpu: "CPU (No Dedicated GPU) ➔ Codec: libsvtav1 (Multi-thread CPU) @ 3200 kbps"
+      },
+      es: {
+        ada: "GPU: NVIDIA RTX 4070 SUPER ➔ Códec: av1_nvenc (Hardware AV1) @ 3500 kbps",
+        ampere: "GPU: NVIDIA RTX 3080 / 2070 ➔ Códec: hevc_nvenc (Hardware H.265) @ 4500 kbps",
+        arc: "GPU: Intel Arc A770 / A750 ➔ Códec: av1_qsv (QuickSync AV1) @ 3500 kbps",
+        amd: "GPU: AMD Radeon RX 7900 / 7800 ➔ Códec: av1_amf (RDNA3 Hardware AV1) @ 3600 kbps",
+        cpu: "Procesador (Sin GPU Dedicada) ➔ Códec: libsvtav1 (CPU Multihilo) @ 3200 kbps"
+      }
     };
 
     function pickHw(key, btn) {
+      currentHwKey = key;
       document.querySelectorAll('.hw-chip-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      document.getElementById('hwReadout').innerText = hwProfiles[key];
+      updateHwReadout();
+    }
+
+    function updateHwReadout() {
+      const readout = document.getElementById('hwReadout');
+      if (readout) {
+        readout.innerText = hwProfiles[curLang][currentHwKey];
+      }
     }
 
     // 6. Copy Clone Command
@@ -1589,14 +1629,76 @@
       navigator.clipboard.writeText(text).then(() => {
         const btn = document.getElementById('btnCopy');
         btn.innerText = curLang === 'es' ? "¡Copiado!" : "Copied!";
-        setTimeout(() => { btn.innerText = curLang === 'es' ? "Copiar" : "Copy"; }, 2000);
+        setTimeout(() => {
+          btn.innerText = curLang === 'es' ? "Copiar" : "Copy";
+        }, 2000);
       });
     }
 
-    // 7. Multi-Language Switcher
-    let curLang = 'es';
+    // 7. Multi-Language Switcher (Default: English)
+    let curLang = localStorage.getItem('neo_lang') || 'en';
 
     const translations = {
+      en: {
+        nav_pipeline: "Pipeline",
+        nav_showcase: "Showcase",
+        nav_calculator: "Calculator",
+        nav_features: "Features",
+        nav_download: "Download",
+        nav_btn_get: "Download .EXE",
+        hero_badge: "HARDWARE AV1 NVENC • NATIVE C++ PYQT6 • R/UNIXPORN RICE",
+        hero_title: 'High-Performance Video <br><span class="gradient-text">Transcoding</span> & <span class="purple-text">Lossless Audio</span>',
+        hero_subtitle: 'Ultimate multimedia optimization suite engineered for Jellyfin and Plex. Slash up to <strong>65% storage</strong> with hardware AV1 and HEVC, instant zero-lag PyQt6 UI, and r/unixporn dark rice aesthetics.',
+        btn_download_exe: "Download NeoOptimizer.exe (v3.0)",
+        btn_github_repo: "View on GitHub",
+        stat_1: "Hardware AV1 NVENC",
+        stat_2: "Storage Space Saved",
+        stat_3: "UI Latency (PyQt6 C++)",
+        stat_4: "Jellyfin Shielded",
+        pipe_tag: "INTERACTIVE PIPELINE",
+        pipe_title: "The 4-Stage Transcoding Flow",
+        pipe_desc: "Click or hover over each node to inspect real-time architecture and telemetry.",
+        step_0_title: "1. FFprobe Scan",
+        step_0_sub: "~120ms / file",
+        step_1_title: "2. Auto Config",
+        step_1_sub: "Dynamic GPU",
+        step_2_title: "3. .neo_tmp Shield",
+        step_2_sub: "NVENC Encoded",
+        step_3_title: "4. Atomic Swap",
+        step_3_sub: "Zero Leak",
+        pipe_telemetry_head: "// LIVE TELEMETRY",
+        pipe_ctrl_info: "Interactive mode • Click nodes to navigate",
+        pipe_btn_prev: "◀ Previous",
+        pipe_btn_next: "Next ▶",
+        showcase_tab_lib: "◈ 01 // LIBRARY & PROFILES",
+        showcase_tab_q: "◈ 02 // QUEUE & TELEMETRY HUD",
+        hw_label: "⚡ DYNAMIC DETECTION:",
+        calc_tag: "REAL-TIME CALCULATOR",
+        calc_title: "Live Quality & Savings Simulator",
+        calc_desc: "Simulate storage reduction and equivalent AV1 bitrates with identical perceptual visual quality.",
+        calc_lbl_orig: "Original Bitrate (H.264 / AVC):",
+        calc_lbl_hours: "Estimated Library Runtime:",
+        calc_note: "* Mathematical model based on perceptual SSIM/VMAF parity between H.264 and AV1 NVENC Ada Lovelace.",
+        calc_res_badge: "Estimated Storage Reduction",
+        calc_dt_target: "Equivalent Target Bitrate:",
+        calc_dt_orig: "Original Size:",
+        calc_dt_neo: "With Neo Optimizer:",
+        feat_1_title: "Dynamic GPU Detection",
+        feat_1_desc: "Auto-analyzes hardware at boot. Ada Lovelace GPUs enable hardware AV1 NVENC; Ampere/Turing series seamlessly fallback to optimal HEVC NVENC.",
+        feat_2_title: "Anti-Indexing Shield",
+        feat_2_desc: "In-progress encodes are locked in hidden <code>.neo_tmp</code> containers with forced Matroska structure. Jellyfin and Plex will never ingest partial or corrupt videos.",
+        feat_3_title: "Clean Subtitle Dispositions",
+        feat_3_desc: 'Exclusive <em>"🚫 No default subtitle"</em> option (<code>-disposition:s:i 0</code>). Preserves all subtitle tracks inside MKV while keeping player playback unforced.',
+        feat_4_title: "Post-Processing Actions",
+        feat_4_desc: "Auto shutdown, hibernate, or sleep upon queue completion, featuring an audible warning and 30-second cancellation countdown.",
+        dl_title: "Portable Standalone Download",
+        dl_desc: "Single-file 64-bit Windows executable. Zero Python installation or PATH configuration required.",
+        dl_btn: "Download NeoOptimizer.exe (v3.0)",
+        term_copy_btn: "Copy",
+        footer_built: "◈ NEO OPTIMIZER // Engineered by",
+        footer_releases: "Releases",
+        footer_mit: "MIT License"
+      },
       es: {
         nav_pipeline: "Pipeline",
         nav_showcase: "Showcase",
@@ -1617,71 +1719,45 @@
         pipe_title: "El Flujo de Trabajo en 4 Etapas",
         pipe_desc: "Haz clic o pasa el cursor sobre cada nodo para inspeccionar la arquitectura en tiempo real.",
         step_0_title: "1. FFprobe Scan",
+        step_0_sub: "~120ms / archivo",
         step_1_title: "2. Auto Config",
+        step_1_sub: "GPU Dinámica",
         step_2_title: "3. .neo_tmp Shield",
+        step_2_sub: "Codificado NVENC",
         step_3_title: "4. Atomic Swap",
+        step_3_sub: "Cero Fugas",
+        pipe_telemetry_head: "// TELEMETRÍA EN VIVO",
+        pipe_ctrl_info: "Modo interactivo • Selección de nodos",
+        pipe_btn_prev: "◀ Anterior",
+        pipe_btn_next: "Siguiente ▶",
+        showcase_tab_lib: "◈ 01 // BIBLIOTECA Y PERFILES",
+        showcase_tab_q: "◈ 02 // COLA Y TELEMETRÍA HUD",
+        hw_label: "⚡ DETECCIÓN DINÁMICA:",
         calc_tag: "CALCULADORA EN TIEMPO REAL",
         calc_title: "Simulador de Ahorro y Bitrate Equivalente",
         calc_desc: "Comprueba cuánto almacenamiento liberarás en tu biblioteca multimedia manteniendo idéntica calidad perceptiva.",
         calc_lbl_orig: "Bitrate Original (H.264 / AVC):",
         calc_lbl_hours: "Horas estimadas de biblioteca:",
+        calc_note: "* Modelo matemático basado en equivalencia perceptual SSIM/VMAF entre H.264 y AV1 NVENC Ada Lovelace.",
         calc_res_badge: "Reducción de Espacio Estimada",
+        calc_dt_target: "Bitrate Objetivo Equivalente:",
         calc_dt_orig: "Peso Original:",
         calc_dt_neo: "Con Neo Optimizer:",
         feat_1_title: "Detección Dinámica de GPU",
         feat_1_desc: "Analiza tu gráfica al arrancar. Si soporta AV1 NVENC lo activa por defecto; si tienes series anteriores (RTX 30/20) conmuta instantáneamente al mejor perfil HEVC.",
         feat_2_title: "Aislamiento Anti-Indexado",
-        feat_2_desc: "Los archivos temporales usan la extensión oculta .neo_tmp con matroska forzado. Jellyfin y Plex jamás detectarán videos a medio procesar.",
+        feat_2_desc: "Los archivos temporales usan la extensión oculta <code>.neo_tmp</code> con matroska forzado. Jellyfin y Plex jamás detectarán videos a medio procesar.",
         feat_3_title: "Subtítulos Limpios",
-        feat_3_desc: "Opción exclusiva \"🚫 Ningún subtítulo por defecto\" (-disposition:s:i 0). Conserva todas las pistas en el MKV pero desactivadas durante el arranque.",
+        feat_3_desc: 'Opción exclusiva <em>"🚫 Ningún subtítulo por defecto"</em> (<code>-disposition:s:i 0</code>). Conserva todas las pistas en el MKV pero desactivadas durante el arranque.',
         feat_4_title: "Acciones al Finalizar",
         feat_4_desc: "Apaga, hiberna o suspende tu PC al terminar una cola larga de madrugada, con aviso acústico y cuenta regresiva de 30 segundos cancelable.",
         dl_title: "Descarga Standalone Portable",
         dl_desc: "Ejecutable de 64 bits para Windows. No requiere Python ni configuración de dependencias.",
-        dl_btn: "Descargar NeoOptimizer.exe (v3.0)"
-      },
-      en: {
-        nav_pipeline: "Pipeline",
-        nav_showcase: "Showcase",
-        nav_calculator: "Calculator",
-        nav_features: "Features",
-        nav_download: "Download",
-        nav_btn_get: "Download .EXE",
-        hero_badge: "HARDWARE AV1 NVENC • NATIVE C++ PYQT6 • R/UNIXPORN RICE",
-        hero_title: 'High-Performance Video <br><span class="gradient-text">Transcoding</span> & <span class="purple-text">Lossless Audio</span>',
-        hero_subtitle: 'Ultimate multimedia optimization suite engineered for Jellyfin and Plex. Slash up to <strong>65% storage</strong> with hardware AV1 and HEVC, instant zero-lag PyQt6 UI, and r/unixporn dark rice aesthetics.',
-        btn_download_exe: "Download NeoOptimizer.exe (v3.0)",
-        btn_github_repo: "View on GitHub",
-        stat_1: "Hardware AV1 NVENC",
-        stat_2: "Storage Space Saved",
-        stat_3: "UI Latency (PyQt6 C++)",
-        stat_4: "Jellyfin Shielded",
-        pipe_tag: "INTERACTIVE PIPELINE",
-        pipe_title: "The 4-Stage Transcoding Flow",
-        pipe_desc: "Click or hover over any node to inspect real-time architecture and telemetry.",
-        step_0_title: "1. FFprobe Scan",
-        step_1_title: "2. Auto Config",
-        step_2_title: "3. .neo_tmp Shield",
-        step_3_title: "4. Atomic Swap",
-        calc_tag: "REAL-TIME CALCULATOR",
-        calc_title: "Live Quality & Savings Simulator",
-        calc_desc: "Simulate storage reduction and equivalent AV1 bitrates with identical perceptual visual quality.",
-        calc_lbl_orig: "Original Bitrate (H.264 / AVC):",
-        calc_lbl_hours: "Estimated Library Runtime:",
-        calc_res_badge: "Estimated Storage Reduction",
-        calc_dt_orig: "Original Size:",
-        calc_dt_neo: "With Neo Optimizer:",
-        feat_1_title: "Dynamic GPU Detection",
-        feat_1_desc: "Auto-analyzes hardware at boot. Ada Lovelace GPUs enable hardware AV1 NVENC; Ampere/Turing series seamlessly fallback to optimal HEVC NVENC.",
-        feat_2_title: "Anti-Indexing Shield",
-        feat_2_desc: "In-progress encodes are locked in hidden .neo_tmp containers. Jellyfin and Plex will never ingest partial or corrupt videos.",
-        feat_3_title: "Clean Subtitle Dispositions",
-        feat_3_desc: "Exclusive \"🚫 No default subtitle\" flag (-disposition:s:i 0). Preserves all subtitle tracks inside MKV while keeping player boot clean.",
-        feat_4_title: "Post-Processing Actions",
-        feat_4_desc: "Auto shutdown, hibernate, or sleep upon queue completion, featuring an audible warning and 30-second cancellation countdown.",
-        dl_title: "Portable Standalone Download",
-        dl_desc: "Single-file 64-bit Windows executable. Zero Python installation or PATH configuration required.",
-        dl_btn: "Download NeoOptimizer.exe (v3.0)"
+        dl_btn: "Descargar NeoOptimizer.exe (v3.0)",
+        term_copy_btn: "Copiar",
+        footer_built: "◈ NEO OPTIMIZER // Desarrollado por",
+        footer_releases: "Releases",
+        footer_mit: "Licencia MIT"
       }
     };
 
@@ -1692,30 +1768,47 @@
     document.addEventListener('click', (e) => {
       const btn = document.getElementById('langBtn');
       const menu = document.getElementById('langDropdown');
-      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+      if (btn && menu && !btn.contains(e.target) && !menu.contains(e.target)) {
         menu.classList.remove('show');
       }
     });
 
     function setLanguage(lang) {
       curLang = lang;
-      document.getElementById('curLangFlag').innerText = lang === 'es' ? '🇪🇸' : '🇺🇸';
-      document.getElementById('curLangCode').innerText = lang.toUpperCase();
-      document.getElementById('langDropdown').classList.remove('show');
+      try {
+        localStorage.setItem('neo_lang', lang);
+      } catch (err) {}
+
+      document.documentElement.lang = lang;
+      const flagEl = document.getElementById('curLangFlag');
+      const codeEl = document.getElementById('curLangCode');
+      const btnEn = document.getElementById('btnLangEn');
+      const btnEs = document.getElementById('btnLangEs');
+
+      if (flagEl) flagEl.innerText = lang === 'es' ? '🇪🇸' : '🇺🇸';
+      if (codeEl) codeEl.innerText = lang.toUpperCase();
+
+      if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+      if (btnEs) btnEs.classList.toggle('active', lang === 'es');
+
+      const menu = document.getElementById('langDropdown');
+      if (menu) menu.classList.remove('show');
 
       const dict = translations[lang];
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (dict[key]) el.innerHTML = dict[key];
+        if (dict && dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
       });
 
       updatePipeUI();
+      updateHwReadout();
       runCalculator();
     }
 
-    // Initialize
-    updatePipeUI();
-    runCalculator();
+    // Initialize Language & Interactive Components
+    setLanguage(curLang);
   </script>
 </body>
 </html>
