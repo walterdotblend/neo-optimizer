@@ -7,7 +7,7 @@ echo ========================================================
 echo   ◈ NEO•OPTIMIZER // SINCRONIZADOR GITHUB Y GITHUB PAGES
 echo ========================================================
 echo.
-echo Repositorio destino: https://github.com/Zylo-dev1/neo-optimizer
+echo Repositorio destino: https://github.com/walterdotblend/neo-optimizer
 echo.
 echo 1. Preparando commits locales...
 git add .
@@ -45,16 +45,16 @@ echo  ¡SUBIDA EXITOSA A GITHUB!
 echo ========================================================
 echo.
 echo  Repositorio:
-echo    https://github.com/Zylo-dev1/neo-optimizer
+echo    https://github.com/walterdotblend/neo-optimizer
 echo.
 echo  Para activar tu pagina web en GitHub Pages:
-echo   1. Entra a: https://github.com/Zylo-dev1/neo-optimizer/settings/pages
+echo   1. Entra a: https://github.com/walterdotblend/neo-optimizer/settings/pages
 echo   2. En 'Build and deployment' -> 'Source':
 echo      Elige 'Deploy from a branch'
 echo   3. En 'Branch': Elige 'main' y carpeta '/docs' (o rama 'gh-pages')
 echo   4. Haz clic en 'Save'.
 echo.
 echo  Tu pagina estara online en:
-echo    https://zylo-dev1.github.io/neo-optimizer/
+echo    https://walterdotblend.github.io/neo-optimizer/
 echo.
 pause
