@@ -69,102 +69,120 @@ ARROW_HOVER_PNG = os.path.join(APP_DIR, "down_arrow_hover.png").replace("\\", "/
 # -----------------------------------------------------------------------------
 def build_qss_theme() -> str:
     return f"""
-/* Reset & Fondo General */
+/* =============================================================================
+   ◈ R/UNIXPORN RICE THEME: TOKYO NIGHT / CATPPUCCIN MOCHA OBSIDIAN
+   ============================================================================= */
+
+/* Reset & Window Base */
 QWidget {{
-    background-color: #08090d;
-    color: #cdd6f4;
-    font-family: 'Segoe UI', 'Inter', -apple-system, sans-serif;
+    background-color: #0e1017;
+    color: #c0caf5;
+    font-family: 'Segoe UI Variable Display', 'Segoe UI', 'Inter', -apple-system, sans-serif;
     font-size: 12px;
 }}
 
-/* Tarjetas Flotantes e Islas */
+/* Floating Island Cards */
 QFrame.CardFrame {{
-    background-color: #0f111a;
-    border: 1px solid #1c1f30;
-    border-radius: 8px;
+    background-color: #151724;
+    border: 1px solid #24283b;
+    border-radius: 12px;
 }}
 
 QFrame.SubCardFrame {{
-    background-color: #07080c;
-    border: 1px solid #181b29;
-    border-radius: 6px;
+    background-color: #1a1d2e;
+    border: 1px solid #282e47;
+    border-radius: 8px;
 }}
 
-/* Pestañas Estilo GRUB Boot-Entries */
+/* Segmented Workspace Pill Tabs (Hyprland / Waybar Rice Style) */
 QTabWidget::pane {{
-    border: 1px solid #1c1f30;
-    background-color: #0b0c13;
-    border-radius: 8px;
-    top: -1px;
+    border: 1px solid #24283b;
+    background-color: #12131d;
+    border-radius: 12px;
+    top: 0px;
+    padding: 0px;
+}}
+
+QTabBar {{
+    qproperty-drawBase: 0;
+    background: transparent;
+    margin-bottom: 8px;
 }}
 
 QTabBar::tab {{
-    background-color: #0d0f17;
-    color: #6c7086;
-    border: 1px solid #1a1c2b;
-    border-bottom: none;
-    padding: 8px 18px;
-    margin-right: 4px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    font-weight: bold;
-    font-size: 12px;
+    background-color: #151724;
+    color: #7982a9;
+    border: 1px solid #24283b;
+    border-radius: 16px;
+    padding: 8px 22px;
+    margin-right: 8px;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.5px;
 }}
 
 QTabBar::tab:selected {{
-    background-color: #141724;
-    color: #89b4fa;
-    border: 1px solid #282d44;
-    border-bottom: 2px solid #89b4fa;
+    background-color: #7aa2f7;
+    color: #0d0e15;
+    border: 1px solid #7aa2f7;
+    font-weight: 800;
 }}
 
 QTabBar::tab:hover:!selected {{
-    background-color: #10121d;
-    color: #cdd6f4;
+    background-color: #1f2338;
+    color: #c0caf5;
+    border: 1px solid #3b4261;
 }}
 
-/* Entradas de Texto */
+/* Inputs & Text Fields (Rofi / Spotlight Style) */
 QLineEdit {{
-    background-color: #07080c;
-    border: 1px solid #1e2235;
-    border-radius: 6px;
-    color: #cdd6f4;
-    padding: 5px 10px;
-    selection-background-color: #2563eb;
+    background-color: #11121c;
+    border: 1px solid #282e47;
+    border-radius: 8px;
+    color: #c0caf5;
+    padding: 6px 12px;
+    font-size: 12px;
+    selection-background-color: #7aa2f7;
+    selection-color: #0d0e15;
+}}
+
+QLineEdit:hover {{
+    border: 1px solid #3b4261;
 }}
 
 QLineEdit:focus {{
-    border: 1px solid #89b4fa;
-    background-color: #0a0c14;
+    border: 1px solid #7aa2f7;
+    background-color: #141724;
 }}
 
-/* DESPLEGABLES (COMBOBOX) - FLECHA E INDICADOR CLAROS */
+/* Dropdowns (ComboBox) */
 QComboBox {{
-    background-color: #0c0e16;
-    border: 1px solid #2a3048;
-    border-radius: 6px;
-    color: #cdd6f4;
-    padding: 5px 30px 5px 10px;
+    background-color: #141622;
+    border: 1px solid #282e47;
+    border-radius: 8px;
+    color: #c0caf5;
+    padding: 5px 30px 5px 12px;
     font-weight: 600;
+    font-size: 11px;
 }}
 
 QComboBox:hover {{
-    border: 1px solid #89b4fa;
-    background-color: #121522;
+    border: 1px solid #7aa2f7;
+    background-color: #1a1d2e;
 }}
 
 QComboBox:focus {{
-    border: 1px solid #89b4fa;
+    border: 1px solid #7aa2f7;
 }}
 
 QComboBox::drop-down {{
     subcontrol-origin: padding;
     subcontrol-position: top right;
     width: 26px;
-    border-left: 1px solid #282d44;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background-color: #161928;
+    border-left: 1px solid #282e47;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    background-color: #1a1d2e;
 }}
 
 QComboBox::drop-down:hover {{
@@ -182,173 +200,210 @@ QComboBox::down-arrow:hover {{
 }}
 
 QComboBox QAbstractItemView {{
-    background-color: #0f111a;
-    border: 1px solid #282c42;
-    selection-background-color: #2563eb;
-    selection-color: #ffffff;
-    color: #cdd6f4;
+    background-color: #141622;
+    border: 1px solid #353b5c;
+    border-radius: 8px;
+    selection-background-color: #7aa2f7;
+    selection-color: #0d0e15;
+    color: #c0caf5;
     outline: none;
-    padding: 4px;
+    padding: 6px;
 }}
 
-/* Casillas de Verificación y Radio Buttons */
+/* Checkboxes & Radio Indicators */
 QCheckBox, QRadioButton {{
-    spacing: 7px;
-    color: #cdd6f4;
+    spacing: 8px;
+    color: #c0caf5;
     font-size: 11px;
+    font-weight: 500;
 }}
 
 QCheckBox::indicator, QRadioButton::indicator {{
-    width: 15px;
-    height: 15px;
-    border: 1px solid #282c42;
-    background-color: #07080c;
-    border-radius: 3px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #2e3552;
+    background-color: #11121c;
+    border-radius: 4px;
 }}
 
 QRadioButton::indicator {{
-    border-radius: 7px;
+    border-radius: 8px;
 }}
 
 QCheckBox::indicator:hover, QRadioButton::indicator:hover {{
-    border: 1px solid #89b4fa;
+    border: 1px solid #7aa2f7;
 }}
 
 QCheckBox::indicator:checked, QRadioButton::indicator:checked {{
+    background-color: #7aa2f7;
+    border: 1px solid #7aa2f7;
+}}
+
+/* Buttons with Rice Accent System */
+QPushButton {{
+    background-color: #1a1d2e;
+    color: #c0caf5;
+    border: 1px solid #2e3552;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-weight: 700;
+    font-size: 11px;
+}}
+
+QPushButton:hover {{
+    background-color: #252a42;
+    border: 1px solid #444c74;
+    color: #ffffff;
+}}
+
+QPushButton:pressed {{
+    background-color: #141622;
+}}
+
+QPushButton:disabled {{
+    background-color: #11121c;
+    color: #434863;
+    border: 1px solid #1c1e2e;
+}}
+
+QPushButton#btn_scan {{
+    background-color: #7aa2f7;
+    color: #0d0e15;
+    border: 1px solid #7aa2f7;
+    font-weight: 800;
+}}
+
+QPushButton#btn_scan:hover {{
     background-color: #89b4fa;
     border: 1px solid #89b4fa;
 }}
 
-/* Botones con Acentos Neón */
-QPushButton {{
-    background-color: #181b29;
-    color: #cdd6f4;
-    border: 1px solid #282c42;
-    border-radius: 6px;
-    padding: 6px 14px;
-    font-weight: bold;
-}}
-
-QPushButton:hover {{
-    background-color: #23273c;
-    border: 1px solid #3b4263;
-}}
-
-QPushButton:pressed {{
-    background-color: #12141f;
-}}
-
-QPushButton:disabled {{
-    background-color: #0d0f17;
-    color: #45475a;
-    border: 1px solid #141624;
-}}
-
-QPushButton#btn_scan {{
-    background-color: #89b4fa;
-    color: #08090d;
-    border: none;
-}}
-
-QPushButton#btn_scan:hover {{
-    background-color: #b4befe;
-}}
-
 QPushButton#btn_start {{
-    background-color: #a6e3a1;
-    color: #08090d;
-    border: none;
+    background-color: #9ece6a;
+    color: #0d0e15;
+    border: 1px solid #9ece6a;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
 }}
 
 QPushButton#btn_start:hover {{
-    background-color: #94e2d5;
+    background-color: #73daca;
+    border: 1px solid #73daca;
 }}
 
 QPushButton#btn_add_sel {{
-    background-color: #cba6f7;
-    color: #08090d;
-    border: none;
+    background-color: #252038;
+    color: #bb9af7;
+    border: 1px solid #3d325c;
 }}
 
 QPushButton#btn_add_sel:hover {{
-    background-color: #d5bdfc;
+    background-color: #352c52;
+    border: 1px solid #5a4985;
+}}
+
+QPushButton#btn_add_all {{
+    background-color: #1a263c;
+    color: #7dcfff;
+    border: 1px solid #29446d;
+}}
+
+QPushButton#btn_add_all:hover {{
+    background-color: #243553;
+    border: 1px solid #3d5887;
 }}
 
 QPushButton#btn_pause {{
-    background-color: #f9e2af;
-    color: #08090d;
-    border: none;
+    background-color: #2a2318;
+    color: #e0af68;
+    border: 1px solid #483a24;
 }}
 
 QPushButton#btn_pause:hover {{
-    background-color: #f5e0dc;
+    background-color: #3b3120;
+    border: 1px solid #6b5633;
 }}
 
 QPushButton#btn_cancel {{
-    background-color: #f38ba8;
-    color: #08090d;
-    border: none;
+    background-color: #2c1a24;
+    color: #f7768e;
+    border: 1px solid #4a2536;
 }}
 
 QPushButton#btn_cancel:hover {{
-    background-color: #eba0ac;
+    background-color: #3f2231;
+    border: 1px solid #70334e;
 }}
 
-/* Tablas Ultra-Rápidas (QTableWidget) */
+/* TUI-Style Tables (No Grid, High-Contrast Rows, Btop/Lazygit Aesthetic) */
 QTableWidget {{
-    background-color: #07080c;
-    alternate-background-color: #0d0f17;
-    gridline-color: #141724;
-    border: 1px solid #181b29;
-    border-radius: 6px;
-    selection-background-color: #2563eb;
-    selection-color: #ffffff;
+    background-color: #11121c;
+    alternate-background-color: #151724;
+    border: 1px solid #24283b;
+    border-radius: 10px;
+    gridline-color: transparent;
+    selection-background-color: #242a42;
+    selection-color: #7dcfff;
     font-size: 11px;
+    outline: none;
+}}
+
+QTableWidget::item {{
+    padding-left: 8px;
+    padding-right: 8px;
+    border-bottom: 1px solid #171927;
+}}
+
+QTableWidget::item:selected {{
+    background-color: #242a42;
+    color: #7dcfff;
 }}
 
 QHeaderView::section {{
-    background-color: #12141f;
-    color: #89b4fa;
-    padding: 6px;
+    background-color: #0e0f17;
+    color: #7982a9;
+    padding: 8px 10px;
     border: none;
-    border-right: 1px solid #1c1f30;
-    border-bottom: 1px solid #1c1f30;
-    font-weight: bold;
-    font-size: 11px;
+    border-bottom: 1px solid #24283b;
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }}
 
-/* Barra de Progreso */
+/* Slim Modern Progress Bar */
 QProgressBar {{
-    background-color: #07080c;
-    border: 1px solid #181b29;
-    border-radius: 5px;
+    background-color: #11121c;
+    border: 1px solid #24283b;
+    border-radius: 3px;
     text-align: center;
-    color: #cdd6f4;
-    font-weight: bold;
+    color: #c0caf5;
+    font-weight: 700;
     font-size: 10px;
 }}
 
 QProgressBar::chunk {{
-    background-color: #89b4fa;
-    border-radius: 4px;
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #7aa2f7, stop:1 #7dcfff);
+    border-radius: 3px;
 }}
 
-/* Barras de Desplazamiento Minimalistas */
+/* Sleek Minimalist Scrollbars */
 QScrollBar:vertical {{
     border: none;
-    background: #07080c;
-    width: 8px;
+    background: transparent;
+    width: 6px;
     margin: 0px;
 }}
 
 QScrollBar::handle:vertical {{
-    background: #252a42;
-    min-height: 20px;
-    border-radius: 4px;
+    background: #2b304c;
+    min-height: 24px;
+    border-radius: 3px;
 }}
 
 QScrollBar::handle:vertical:hover {{
-    background: #89b4fa;
+    background: #7aa2f7;
 }}
 
 QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {{
@@ -357,51 +412,61 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {{
 
 QScrollBar:horizontal {{
     border: none;
-    background: #07080c;
-    height: 8px;
+    background: transparent;
+    height: 6px;
     margin: 0px;
 }}
 
 QScrollBar::handle:horizontal {{
-    background: #252a42;
-    min-width: 20px;
-    border-radius: 4px;
+    background: #2b304c;
+    min-width: 24px;
+    border-radius: 3px;
 }}
 
 QScrollBar::handle:horizontal:hover {{
-    background: #89b4fa;
+    background: #7aa2f7;
 }}
 
 QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {{
     width: 0px;
 }}
 
-/* Menú Contextual */
+/* Context Menus & Tooltips */
 QMenu {{
-    background-color: #0f111a;
-    border: 1px solid #282c42;
-    border-radius: 6px;
-    padding: 4px;
+    background-color: #141622;
+    border: 1px solid #353b5c;
+    border-radius: 8px;
+    padding: 6px;
 }}
 
 QMenu::item {{
-    padding: 6px 20px;
-    border-radius: 4px;
-    color: #cdd6f4;
+    padding: 6px 22px;
+    border-radius: 6px;
+    color: #c0caf5;
+    font-weight: 500;
 }}
 
 QMenu::item:selected {{
-    background-color: #2563eb;
-    color: #ffffff;
+    background-color: #7aa2f7;
+    color: #0d0e15;
+    font-weight: 700;
 }}
 
 QMenu::separator {{
     height: 1px;
-    background: #1e2235;
-    margin: 4px 8px;
+    background: #282e47;
+    margin: 5px 8px;
+}}
+
+QToolTip {{
+    background-color: #161724;
+    color: #c0caf5;
+    border: 1px solid #353b5c;
+    border-radius: 6px;
+    padding: 5px 9px;
+    font-size: 11px;
 }}
 """
-
 # -----------------------------------------------------------------------------
 # HILO DE CODIFICACIÓN EN SEGUNDO PLANO (THREAD-SAFE & ZERO UI BLOCK)
 # -----------------------------------------------------------------------------
@@ -676,17 +741,17 @@ class ErrorsDialog(QDialog):
         self.setStyleSheet(build_qss_theme())
 
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(16, 16, 16, 16)
+        layout.setContentsMargins(18, 18, 18, 18)
         layout.setSpacing(12)
 
         lbl_title = QLabel(get_text(lang, "err_dialog_header"))
-        lbl_title.setStyleSheet("font-size: 15px; font-weight: bold; color: #f38ba8;")
+        lbl_title.setStyleSheet("font-size: 15px; font-weight: 800; color: #f7768e; letter-spacing: 0.5px;")
         layout.addWidget(lbl_title)
 
         self.txt_edit = QTextEdit()
         self.txt_edit.setReadOnly(True)
-        self.txt_edit.setFont(QFont("Consolas", 10))
-        self.txt_edit.setStyleSheet("background-color: #07080c; border: 1px solid #1e2235; color: #f8bd96; border-radius: 6px;")
+        self.txt_edit.setFont(QFont("Cascadia Code", 10))
+        self.txt_edit.setStyleSheet("background-color: #11121c; border: 1px solid #282e47; color: #ff9e64; border-radius: 8px; padding: 10px;")
         self.txt_edit.setPlainText("\n\n".join(errors))
         layout.addWidget(self.txt_edit)
 
@@ -694,6 +759,8 @@ class ErrorsDialog(QDialog):
         btn_row.addStretch()
         btn_close = QPushButton(get_text(lang, "err_dialog_close"))
         btn_close.setFixedWidth(120)
+        btn_close.setFixedHeight(34)
+        btn_close.setStyleSheet("background-color: #1a1d2e; color: #c0caf5; border: 1px solid #2e3552; border-radius: 8px; font-weight: 700;")
         btn_close.clicked.connect(self.accept)
         btn_row.addWidget(btn_close)
         layout.addLayout(btn_row)
@@ -709,35 +776,35 @@ class CountdownDialog(QDialog):
         self.setWindowFlags(self.windowFlags() | Qt.WindowType.WindowStaysOnTopHint)
 
         layout = QVBoxLayout(self)
-        layout.setContentsMargins(20, 20, 20, 20)
+        layout.setContentsMargins(22, 22, 22, 22)
         layout.setSpacing(12)
 
         color_map = {
-            "Shutdown": "#f38ba8", "Apagar": "#f38ba8",
-            "Hibernate": "#89b4fa", "Hibernar": "#89b4fa",
-            "Sleep": "#cba6f7", "Suspender": "#cba6f7",
-            "Close": "#fab387", "Cerrar": "#fab387"
+            "Shutdown": "#f7768e", "Apagar": "#f7768e",
+            "Hibernate": "#7aa2f7", "Hibernar": "#7aa2f7",
+            "Sleep": "#bb9af7", "Suspender": "#bb9af7",
+            "Close": "#ff9e64", "Cerrar": "#ff9e64"
         }
-        color_code = "#89b4fa"
+        color_code = "#7aa2f7"
         for k, v in color_map.items():
             if k in action:
                 color_code = v
                 break
 
         lbl_header = QLabel(f"⚡ {action}")
-        lbl_header.setStyleSheet(f"font-size: 17px; font-weight: bold; color: {color_code};")
+        lbl_header.setStyleSheet(f"font-size: 18px; font-weight: 800; color: {color_code}; letter-spacing: 0.5px;")
         lbl_header.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(lbl_header)
 
         summary_txt = f"Tasks completed: {done_count}" + (f" ({err_count} with error)" if err_count > 0 else "")
         lbl_sum = QLabel(summary_txt)
-        lbl_sum.setStyleSheet("color: #6c7086; font-size: 12px;")
+        lbl_sum.setStyleSheet("color: #7982a9; font-size: 12px; font-weight: 600;")
         lbl_sum.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(lbl_sum)
 
         self.remaining_sec = 30
         self.lbl_timer = QLabel(f"Action executes in {self.remaining_sec} seconds...")
-        self.lbl_timer.setStyleSheet("color: #f9e2af; font-size: 14px; font-weight: bold;")
+        self.lbl_timer.setStyleSheet("color: #e0af68; font-size: 14px; font-weight: 800; font-family: 'Cascadia Code', 'JetBrains Mono', monospace;")
         self.lbl_timer.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(self.lbl_timer)
 
@@ -745,19 +812,20 @@ class CountdownDialog(QDialog):
         self.bar_timer.setRange(0, 30)
         self.bar_timer.setValue(30)
         self.bar_timer.setTextVisible(False)
-        self.bar_timer.setFixedHeight(8)
+        self.bar_timer.setFixedHeight(6)
         self.bar_timer.setStyleSheet(f"QProgressBar::chunk {{ background-color: {color_code}; }}")
         layout.addWidget(self.bar_timer)
 
         btn_row = QHBoxLayout()
         btn_cancel = QPushButton(get_text(lang, "countdown_cancel"))
         btn_cancel.setFixedHeight(36)
+        btn_cancel.setStyleSheet("background-color: #1a1d2e; color: #c0caf5; border: 1px solid #2e3552; border-radius: 8px; font-weight: 700;")
         btn_cancel.clicked.connect(self.reject)
         btn_row.addWidget(btn_cancel)
 
         btn_now = QPushButton(get_text(lang, "countdown_now"))
         btn_now.setFixedHeight(36)
-        btn_now.setStyleSheet(f"background-color: {color_code}; color: #08090d; font-weight: bold;")
+        btn_now.setStyleSheet(f"background-color: {color_code}; color: #0d0e15; font-weight: 800; border-radius: 8px; border: 1px solid {color_code};")
         btn_now.clicked.connect(self.accept)
         btn_row.addWidget(btn_now)
         layout.addLayout(btn_row)
@@ -779,7 +847,6 @@ class CountdownDialog(QDialog):
         if self.remaining_sec <= 0:
             self.timer.stop()
             self.accept()
-
 # -----------------------------------------------------------------------------
 # VENTANA PRINCIPAL (PyQt6 GRUB / UNIXPORN THEME & MULTILANGUAGE)
 # -----------------------------------------------------------------------------
@@ -849,33 +916,33 @@ class ModernVideoOptimizer(QMainWindow):
         row_telemetry = QHBoxLayout()
         row_telemetry.setSpacing(8)
 
-        lbl_brand = QLabel("◈ NEO•OPTIMIZER")
-        lbl_brand.setStyleSheet("font-size: 16px; font-weight: bold; color: #89b4fa;")
+        lbl_brand = QLabel("◈ NEO // OPTIMIZER")
+        lbl_brand.setStyleSheet("font-size: 16px; font-weight: 800; color: #7aa2f7; letter-spacing: 1px;")
         row_telemetry.addWidget(lbl_brand)
 
-        badge_ver = QLabel(" v3.0 PyQt6 ")
-        badge_ver.setStyleSheet("background-color: #261b3b; color: #cba6f7; font-weight: bold; border-radius: 5px; padding: 2px 6px; font-size: 10px;")
+        badge_ver = QLabel(" v3.0 ")
+        badge_ver.setStyleSheet("background-color: #252038; color: #bb9af7; font-weight: 800; border-radius: 6px; padding: 2px 8px; font-size: 10px; border: 1px solid #3d325c;")
         row_telemetry.addWidget(badge_ver)
 
         row_telemetry.addStretch()
 
         # Telemetría de GPU Dinámica
         self.lbl_gpu_badge = QLabel()
-        self.lbl_gpu_badge.setStyleSheet("background-color: #162920; color: #a6e3a1; font-weight: bold; border-radius: 6px; padding: 4px 10px; font-size: 11px;")
+        self.lbl_gpu_badge.setStyleSheet("background-color: #152420; color: #73daca; font-weight: 700; border: 1px solid #244136; border-radius: 8px; padding: 4px 12px; font-size: 11px;")
         row_telemetry.addWidget(self.lbl_gpu_badge)
 
         self.lbl_codec_badge = QLabel()
-        self.lbl_codec_badge.setStyleSheet("background-color: #18233c; color: #89b4fa; font-weight: bold; border-radius: 6px; padding: 4px 10px; font-size: 11px;")
+        self.lbl_codec_badge.setStyleSheet("background-color: #172238; color: #7dcfff; font-weight: 700; border: 1px solid #283d63; border-radius: 8px; padding: 4px 12px; font-size: 11px;")
         row_telemetry.addWidget(self.lbl_codec_badge)
 
         self.btn_redetect = QPushButton()
-        self.btn_redetect.setStyleSheet("background-color: #161928; color: #94e2d5; border: 1px solid #233544; border-radius: 6px; font-size: 11px; padding: 3px 8px;")
+        self.btn_redetect.setStyleSheet("background-color: #1a1d2e; color: #7aa2f7; border: 1px solid #2e3552; border-radius: 8px; font-size: 11px; font-weight: 700; padding: 4px 12px;")
         self.btn_redetect.clicked.connect(self._on_redetect_hardware)
         row_telemetry.addWidget(self.btn_redetect)
 
         # Selector de Idioma (Language Selector)
         self.lbl_lang = QLabel("🌐 Language:")
-        self.lbl_lang.setStyleSheet("font-weight: bold; color: #cdd6f4;")
+        self.lbl_lang.setStyleSheet("font-weight: 700; color: #7982a9; font-size: 11px;")
         row_telemetry.addWidget(self.lbl_lang)
 
         self.cb_lang = QComboBox()
@@ -883,7 +950,8 @@ class ModernVideoOptimizer(QMainWindow):
         self.cb_lang.addItem("Español", "es")
         self.cb_lang.addItem("Français", "fr")
         self.cb_lang.addItem("日本語", "ja")
-        self.cb_lang.setFixedWidth(115)
+        self.cb_lang.setFixedWidth(120)
+        self.cb_lang.setFixedHeight(30)
         self.cb_lang.currentIndexChanged.connect(self._on_language_changed)
         row_telemetry.addWidget(self.cb_lang)
 
@@ -894,22 +962,23 @@ class ModernVideoOptimizer(QMainWindow):
         row_search.setSpacing(6)
 
         self.lbl_dir = QLabel()
-        self.lbl_dir.setStyleSheet("font-weight: bold; color: #cdd6f4;")
+        self.lbl_dir.setStyleSheet("font-weight: 800; color: #7982a9; font-size: 11px; letter-spacing: 0.5px;")
         row_search.addWidget(self.lbl_dir)
 
         self.txt_dir = QLineEdit()
-        self.txt_dir.setFixedHeight(34)
+        self.txt_dir.setFixedHeight(36)
         row_search.addWidget(self.txt_dir, stretch=1)
 
         self.btn_browse = QPushButton()
-        self.btn_browse.setFixedHeight(34)
+        self.btn_browse.setFixedHeight(36)
+        self.btn_browse.setMinimumWidth(95)
         self.btn_browse.clicked.connect(self.choose_directory)
         row_search.addWidget(self.btn_browse)
 
         self.btn_scan = QPushButton()
         self.btn_scan.setObjectName("btn_scan")
-        self.btn_scan.setFixedHeight(34)
-        self.btn_scan.setFixedWidth(155)
+        self.btn_scan.setFixedHeight(36)
+        self.btn_scan.setFixedWidth(160)
         self.btn_scan.clicked.connect(self.start_scan)
         row_search.addWidget(self.btn_scan)
 
@@ -937,19 +1006,20 @@ class ModernVideoOptimizer(QMainWindow):
         # Fila de Estado y Velocímetro
         row_status = QHBoxLayout()
         self.lbl_status = QLabel()
-        self.lbl_status.setStyleSheet("font-weight: bold; color: #89b4fa;")
+        self.lbl_status.setStyleSheet("font-weight: 700; color: #7aa2f7; font-size: 11px;")
         row_status.addWidget(self.lbl_status)
 
         row_status.addStretch()
 
         self.lbl_speedometer = QLabel()
-        self.lbl_speedometer.setStyleSheet("background-color: #07080c; color: #a6e3a1; font-weight: bold; padding: 4px 10px; border-radius: 6px; border: 1px solid #181b29;")
+        self.lbl_speedometer.setStyleSheet("background-color: #11121c; color: #73daca; font-weight: 800; font-family: 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace; padding: 4px 12px; border-radius: 8px; border: 1px solid #23273c; font-size: 11px;")
         row_status.addWidget(self.lbl_speedometer)
         layout_d.addLayout(row_status)
 
         # Barra de Progreso Global
         self.progress_bar = QProgressBar()
-        self.progress_bar.setFixedHeight(10)
+        self.progress_bar.setFixedHeight(6)
+        self.progress_bar.setTextVisible(False)
         self.progress_bar.setValue(0)
         layout_d.addWidget(self.progress_bar)
 
@@ -973,7 +1043,7 @@ class ModernVideoOptimizer(QMainWindow):
         self.btn_start = QPushButton()
         self.btn_start.setObjectName("btn_start")
         self.btn_start.setFixedHeight(36)
-        self.btn_start.setMinimumWidth(100)
+        self.btn_start.setMinimumWidth(140)
         self.btn_start.clicked.connect(self.start_encoding)
         row_actions.addWidget(self.btn_start)
 
@@ -996,12 +1066,12 @@ class ModernVideoOptimizer(QMainWindow):
         row_actions.addStretch()
 
         self.lbl_after = QLabel()
-        self.lbl_after.setStyleSheet("font-weight: bold; color: #cdd6f4;")
+        self.lbl_after.setStyleSheet("font-weight: 700; color: #7982a9; font-size: 11px;")
         row_actions.addWidget(self.lbl_after)
 
         self.cb_after_action = QComboBox()
         self.cb_after_action.setFixedHeight(34)
-        self.cb_after_action.setFixedWidth(200)
+        self.cb_after_action.setFixedWidth(220)
         row_actions.addWidget(self.cb_after_action)
 
         layout_d.addLayout(row_actions)
@@ -1025,16 +1095,13 @@ class ModernVideoOptimizer(QMainWindow):
         header_v = QHBoxLayout()
         header_v.setSpacing(10)
         self.lbl_profiles_title = QLabel()
-        self.lbl_profiles_title.setStyleSheet("font-weight: bold; font-size: 13px; color: #89b4fa;")
+        self.lbl_profiles_title.setStyleSheet("font-weight: 800; font-size: 12px; color: #7aa2f7; letter-spacing: 0.6px; text-transform: uppercase;")
         header_v.addWidget(self.lbl_profiles_title)
 
         # Botón Auto Config prominente y evidente en la cabecera de perfiles/versiones
         self.btn_auto_config = QPushButton()
         self.btn_auto_config.setFixedHeight(28)
-        self.btn_auto_config.setStyleSheet(
-            "background-color: #1e3a5f; color: #89b4fa; border: 1px solid #3b82f6; "
-            "border-radius: 6px; font-weight: bold; font-size: 11px; padding: 4px 14px;"
-        )
+        self.btn_auto_config.setStyleSheet("background-color: #17243d; color: #7dcfff; border: 1px solid #294c7a; border-radius: 7px; font-weight: 800; font-size: 11px; padding: 4px 14px;")
         self.btn_auto_config.clicked.connect(self.auto_configure_all_profiles)
         header_v.addWidget(self.btn_auto_config)
 
@@ -1042,6 +1109,7 @@ class ModernVideoOptimizer(QMainWindow):
 
         self.btn_add_ver = QPushButton()
         self.btn_add_ver.setFixedHeight(28)
+        self.btn_add_ver.setStyleSheet("background-color: #252038; color: #bb9af7; border: 1px solid #3d325c; border-radius: 7px; font-weight: 700; font-size: 11px; padding: 4px 14px;")
         self.btn_add_ver.clicked.connect(self.add_version_ui)
         header_v.addWidget(self.btn_add_ver)
         layout_v.addLayout(header_v)
@@ -1059,7 +1127,7 @@ class ModernVideoOptimizer(QMainWindow):
         self.scroll_versions.setWidget(self.widget_versions_container)
         layout_v.addWidget(self.scroll_versions)
 
-        row_cards.addWidget(card_v, stretch=1)
+        row_cards.addWidget(card_v, stretch=7)
 
         # 2. Tarjeta Audio, Subtítulos y Opciones
         card_a = QFrame()
@@ -1068,9 +1136,19 @@ class ModernVideoOptimizer(QMainWindow):
         layout_a.setContentsMargins(12, 10, 12, 10)
         layout_a.setSpacing(6)
 
+        header_a = QHBoxLayout()
+        header_a.setSpacing(10)
         self.lbl_aud_sub_title = QLabel()
-        self.lbl_aud_sub_title.setStyleSheet("font-weight: bold; font-size: 13px; color: #89b4fa;")
-        layout_a.addWidget(self.lbl_aud_sub_title)
+        self.lbl_aud_sub_title.setStyleSheet("font-weight: 800; font-size: 12px; color: #7aa2f7; letter-spacing: 0.6px; text-transform: uppercase;")
+        header_a.addWidget(self.lbl_aud_sub_title)
+        header_a.addStretch()
+
+        self.btn_clean_meta = QPushButton()
+        self.btn_clean_meta.setFixedHeight(28)
+        self.btn_clean_meta.setStyleSheet("background-color: #1a1d2e; color: #e0af68; border: 1px solid #423825; border-radius: 6px; font-weight: 700; font-size: 11px; padding: 4px 12px;")
+        self.btn_clean_meta.clicked.connect(self.clean_metadata_now)
+        header_a.addWidget(self.btn_clean_meta)
+        layout_a.addLayout(header_a)
 
         # Audio Selector
         r_aud = QHBoxLayout()
@@ -1120,7 +1198,7 @@ class ModernVideoOptimizer(QMainWindow):
 
         # Subtítulo modo ninguno por defecto
         self.rb_sub_none = QRadioButton()
-        self.rb_sub_none.setStyleSheet("color: #f38ba8; font-weight: bold;")
+        self.rb_sub_none.setStyleSheet("color: #f7768e; font-weight: 700; font-size: 11px;")
         self.rb_sub_none.toggled.connect(self._on_sub_mode_none_toggled)
         layout_a.addWidget(self.rb_sub_none)
 
@@ -1135,37 +1213,32 @@ class ModernVideoOptimizer(QMainWindow):
         self.chk_only_res = QCheckBox()
         self.chk_only_res.setChecked(True)
         r_opts.addWidget(self.chk_only_res)
-
         r_opts.addStretch()
-        self.btn_clean_meta = QPushButton()
-        self.btn_clean_meta.setFixedHeight(26)
-        self.btn_clean_meta.clicked.connect(self.clean_metadata_now)
-        r_opts.addWidget(self.btn_clean_meta)
 
         layout_a.addLayout(r_opts)
-        row_cards.addWidget(card_a, stretch=1)
+        row_cards.addWidget(card_a, stretch=6)
         layout.addLayout(row_cards)
 
         # 3. Banner de Telemetría Polybar / Resumen de Selección
         self.banner_frame = QFrame()
-        self.banner_frame.setStyleSheet("background-color: #141724; border: 1px solid #282d44; border-radius: 6px; padding: 4px;")
+        self.banner_frame.setStyleSheet("background-color: #141622; border: 1px solid #23273c; border-radius: 8px; padding: 4px 12px;")
         layout_b = QHBoxLayout(self.banner_frame)
         layout_b.setContentsMargins(12, 4, 12, 4)
 
         self.lbl_editing_target = QLabel()
-        self.lbl_editing_target.setStyleSheet("font-weight: bold; color: #cdd6f4;")
+        self.lbl_editing_target.setStyleSheet("font-weight: 700; color: #c0caf5; font-size: 11px;")
         layout_b.addWidget(self.lbl_editing_target)
 
         layout_b.addStretch()
 
         self.lbl_global_savings = QLabel("📊 Total Size: 0 MB ➜ Est: 0 MB (-0%)")
-        self.lbl_global_savings.setStyleSheet("font-weight: bold; color: #89b4fa;")
+        self.lbl_global_savings.setStyleSheet("font-weight: 800; color: #73daca; font-family: 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace; font-size: 12px;")
         layout_b.addWidget(self.lbl_global_savings)
 
         self.btn_remove_sel = QPushButton()
         self.btn_remove_sel.setFixedHeight(26)
         self.btn_remove_sel.setMinimumWidth(110)
-        self.btn_remove_sel.setStyleSheet("background-color: #23273c; color: #f38ba8; border: 1px solid #3b4263; font-size: 11px; padding: 2px 10px;")
+        self.btn_remove_sel.setStyleSheet("background-color: #2c1a24; color: #f7768e; border: 1px solid #4a2536; border-radius: 6px; font-size: 11px; font-weight: 700; padding: 2px 12px;")
         self.btn_remove_sel.clicked.connect(self._ctx_remove_from_tree)
         layout_b.addWidget(self.btn_remove_sel)
 
@@ -1174,23 +1247,27 @@ class ModernVideoOptimizer(QMainWindow):
         # 4. Tabla de Videos y Series (QTableWidget Ultra-Rápido)
         self.table_lib = QTableWidget()
         self.table_lib.setColumnCount(12)
+        self.table_lib.setShowGrid(False)
+        self.table_lib.verticalHeader().setVisible(False)
+        self.table_lib.verticalHeader().setDefaultSectionSize(32)
+        self.table_lib.setAlternatingRowColors(True)
         self.table_lib.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.table_lib.setSelectionMode(QAbstractItemView.SelectionMode.ExtendedSelection)
         self.table_lib.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.table_lib.horizontalHeader().setStretchLastSection(True)
         self.table_lib.horizontalHeader().setSectionResizeMode(0, QHeaderView.ResizeMode.Interactive)
-        self.table_lib.setColumnWidth(0, 310)
+        self.table_lib.setColumnWidth(0, 300)
         self.table_lib.setColumnWidth(1, 80)
-        self.table_lib.setColumnWidth(2, 95)
-        self.table_lib.setColumnWidth(3, 85)
-        self.table_lib.setColumnWidth(4, 90)
+        self.table_lib.setColumnWidth(2, 90)
+        self.table_lib.setColumnWidth(3, 95)
+        self.table_lib.setColumnWidth(4, 105)
         self.table_lib.setColumnWidth(5, 95)
         self.table_lib.setColumnWidth(6, 85)
-        self.table_lib.setColumnWidth(7, 85)
-        self.table_lib.setColumnWidth(8, 85)
+        self.table_lib.setColumnWidth(7, 90)
+        self.table_lib.setColumnWidth(8, 100)
         self.table_lib.setColumnWidth(9, 210)
-        self.table_lib.setColumnWidth(10, 140)
-        self.table_lib.setColumnWidth(11, 140)
+        self.table_lib.setColumnWidth(10, 130)
+        self.table_lib.setColumnWidth(11, 130)
         self.table_lib.itemSelectionChanged.connect(self.on_table_select)
         self.table_lib.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.table_lib.customContextMenuRequested.connect(self.show_context_menu)
@@ -1204,26 +1281,30 @@ class ModernVideoOptimizer(QMainWindow):
 
         bar_q = QHBoxLayout()
         self.lbl_queue_stats = QLabel("📋 Encoding Queue (0 tasks)")
-        self.lbl_queue_stats.setStyleSheet("font-weight: bold; font-size: 13px; color: #cba6f7;")
+        self.lbl_queue_stats.setStyleSheet("font-weight: 800; font-size: 12px; color: #bb9af7; letter-spacing: 0.6px; text-transform: uppercase;")
         bar_q.addWidget(self.lbl_queue_stats)
 
         self.btn_move_up = QPushButton()
         self.btn_move_up.setFixedHeight(28)
+        self.btn_move_up.setStyleSheet("background-color: #1a1d2e; color: #c0caf5; border: 1px solid #2e3552; border-radius: 7px; font-weight: 700; padding: 4px 12px;")
         self.btn_move_up.clicked.connect(self.move_queue_item_up)
         bar_q.addWidget(self.btn_move_up)
 
         self.btn_move_down = QPushButton()
         self.btn_move_down.setFixedHeight(28)
+        self.btn_move_down.setStyleSheet("background-color: #1a1d2e; color: #c0caf5; border: 1px solid #2e3552; border-radius: 7px; font-weight: 700; padding: 4px 12px;")
         self.btn_move_down.clicked.connect(self.move_queue_item_down)
         bar_q.addWidget(self.btn_move_down)
 
         self.btn_del_q = QPushButton()
         self.btn_del_q.setFixedHeight(28)
+        self.btn_del_q.setStyleSheet("background-color: #2c1a24; color: #f7768e; border: 1px solid #4a2536; border-radius: 7px; font-weight: 700; padding: 4px 12px;")
         self.btn_del_q.clicked.connect(self.remove_queue_selected)
         bar_q.addWidget(self.btn_del_q)
 
         self.btn_err_log = QPushButton()
         self.btn_err_log.setFixedHeight(28)
+        self.btn_err_log.setStyleSheet("background-color: #17243d; color: #7dcfff; border: 1px solid #294c7a; border-radius: 7px; font-weight: 700; padding: 4px 12px;")
         self.btn_err_log.clicked.connect(self.show_queue_errors_dialog)
         bar_q.addWidget(self.btn_err_log)
 
@@ -1231,7 +1312,7 @@ class ModernVideoOptimizer(QMainWindow):
 
         self.btn_clear_q = QPushButton()
         self.btn_clear_q.setFixedHeight(28)
-        self.btn_clear_q.setStyleSheet("background-color: #2e1820; color: #f38ba8; border: 1px solid #4a242d;")
+        self.btn_clear_q.setStyleSheet("background-color: #2c1a24; color: #f7768e; border: 1px solid #4a2536; border-radius: 7px; font-weight: 700; padding: 4px 12px;")
         self.btn_clear_q.clicked.connect(self.clear_queue)
         bar_q.addWidget(self.btn_clear_q)
 
@@ -1239,6 +1320,10 @@ class ModernVideoOptimizer(QMainWindow):
 
         self.table_q = QTableWidget()
         self.table_q.setColumnCount(6)
+        self.table_q.setShowGrid(False)
+        self.table_q.verticalHeader().setVisible(False)
+        self.table_q.verticalHeader().setDefaultSectionSize(32)
+        self.table_q.setAlternatingRowColors(True)
         self.table_q.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.table_q.setSelectionMode(QAbstractItemView.SelectionMode.ExtendedSelection)
         self.table_q.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
@@ -1284,8 +1369,8 @@ class ModernVideoOptimizer(QMainWindow):
         self.btn_browse.setText(get_text(L, "btn_browse"))
         self.btn_scan.setText(get_text(L, "btn_scan"))
 
-        self.tabs.setTabText(0, get_text(L, "tab_library"))
-        self.tabs.setTabText(1, get_text(L, "tab_queue"))
+        self.tabs.setTabText(0, get_text(L, "tab_library").replace("&", "&&"))
+        self.tabs.setTabText(1, get_text(L, "tab_queue").replace("&", "&&"))
 
         self.lbl_profiles_title.setText(get_text(L, "profiles_title"))
         self.btn_auto_config.setText(get_text(L, "btn_auto_config_header"))
@@ -1388,10 +1473,10 @@ class ModernVideoOptimizer(QMainWindow):
 
         if prof["is_av1_supported"]:
             self.lbl_codec_badge.setText(get_text(L, "auto_config_av1", codec=prof["recommended_codec"].upper()))
-            self.lbl_codec_badge.setStyleSheet("background-color: #18233c; color: #89b4fa; font-weight: bold; border-radius: 6px; padding: 4px 10px; font-size: 11px;")
+            self.lbl_codec_badge.setStyleSheet("background-color: #172238; color: #7dcfff; font-weight: 700; border: 1px solid #283d63; border-radius: 8px; padding: 4px 12px; font-size: 11px;")
         else:
             self.lbl_codec_badge.setText(get_text(L, "auto_config_best", codec=prof["recommended_codec"].upper()))
-            self.lbl_codec_badge.setStyleSheet("background-color: #291e16; color: #fab387; font-weight: bold; border-radius: 6px; padding: 4px 10px; font-size: 11px;")
+            self.lbl_codec_badge.setStyleSheet("background-color: #2a2318; color: #ff9e64; font-weight: 700; border: 1px solid #483a24; border-radius: 8px; padding: 4px 12px; font-size: 11px;")
 
         self._is_loading_ui = True
         self._clear_all_version_uis()
@@ -1414,10 +1499,10 @@ class ModernVideoOptimizer(QMainWindow):
         self.lbl_gpu_badge.setText(get_text(L, "gpu_detected", gpu=prof["gpu_name"]))
         if prof["is_av1_supported"]:
             self.lbl_codec_badge.setText(get_text(L, "auto_config_av1", codec=prof["recommended_codec"].upper()))
-            self.lbl_codec_badge.setStyleSheet("background-color: #18233c; color: #89b4fa; font-weight: bold; border-radius: 6px; padding: 4px 10px; font-size: 11px;")
+            self.lbl_codec_badge.setStyleSheet("background-color: #172238; color: #7dcfff; font-weight: 700; border: 1px solid #283d63; border-radius: 8px; padding: 4px 12px; font-size: 11px;")
         else:
             self.lbl_codec_badge.setText(get_text(L, "auto_config_best", codec=prof["recommended_codec"].upper()))
-            self.lbl_codec_badge.setStyleSheet("background-color: #291e16; color: #fab387; font-weight: bold; border-radius: 6px; padding: 4px 10px; font-size: 11px;")
+            self.lbl_codec_badge.setStyleSheet("background-color: #2a2318; color: #ff9e64; font-weight: 700; border: 1px solid #483a24; border-radius: 8px; padding: 4px 12px; font-size: 11px;")
 
         # Actualizar opciones de códecs en las tarjetas existentes sin duplicar
         if self.active_version_widgets:
@@ -1456,12 +1541,12 @@ class ModernVideoOptimizer(QMainWindow):
             default_bitrate = str(prof["recommended_bitrate_720p"]) if default_res == "720p" else str(prof["recommended_bitrate_1080p"])
 
         v_idx = len(self.active_version_widgets) + 1
-        accents = ["#89b4fa", "#cba6f7", "#fab387", "#a6e3a1", "#f5c2e7"]
+        accents = ["#7dcfff", "#bb9af7", "#ff9e64", "#73daca", "#f7768e"]
         accent_color = accents[(v_idx - 1) % len(accents)]
 
         box = QFrame()
         box.setProperty("class", "SubCardFrame")
-        box.setStyleSheet(f"QFrame.SubCardFrame {{ border-left: 3px solid {accent_color}; }}")
+        box.setStyleSheet(f"QFrame.SubCardFrame {{ border-left: 4px solid {accent_color}; background-color: #161724; border-radius: 8px; border-top: 1px solid #23273c; border-right: 1px solid #23273c; border-bottom: 1px solid #23273c; }}")
         l_box = QVBoxLayout(box)
         l_box.setContentsMargins(10, 6, 10, 6)
         l_box.setSpacing(4)
@@ -1470,14 +1555,14 @@ class ModernVideoOptimizer(QMainWindow):
         suffix = get_text(L, "version_primary") if v_idx == 1 else get_text(L, "version_secondary")
         title_txt = get_text(L, "version_title", idx=v_idx) + suffix
         lbl_t = QLabel(title_txt)
-        lbl_t.setStyleSheet(f"font-weight: bold; color: {accent_color}; font-size: 11px;")
+        lbl_t.setStyleSheet(f"font-weight: 800; color: {accent_color}; font-size: 11px; letter-spacing: 0.5px;")
         r1.addWidget(lbl_t)
         r1.addStretch()
 
         btn_del = QPushButton(get_text(L, "btn_del"))
         btn_del.setMinimumWidth(85)
         btn_del.setFixedHeight(24)
-        btn_del.setStyleSheet("background-color: #3b1219; color: #f38ba8; font-weight: bold; font-size: 11px; border: 1px solid #5e1f29; border-radius: 5px; padding: 2px 10px;")
+        btn_del.setStyleSheet("background-color: #2c1a24; color: #f7768e; font-weight: 700; font-size: 11px; border: 1px solid #4a2536; border-radius: 6px; padding: 2px 10px;")
         btn_del.clicked.connect(lambda _, b=box: self.remove_version_ui(b))
         btn_del.setVisible(v_idx > 1)
         r1.addWidget(btn_del)
@@ -1492,7 +1577,7 @@ class ModernVideoOptimizer(QMainWindow):
         idx = cb_codec.findText(default_codec)
         if idx >= 0:
             cb_codec.setCurrentIndex(idx)
-        cb_codec.setFixedWidth(140)
+        cb_codec.setFixedWidth(130)
         cb_codec.currentIndexChanged.connect(self._on_settings_change)
         r2.addWidget(cb_codec)
 
@@ -1503,13 +1588,13 @@ class ModernVideoOptimizer(QMainWindow):
         if r_idx >= 0:
             cb_res.setCurrentIndex(r_idx)
         # Ancho ampliado para que '4K (2160p)' entre holgadamente
-        cb_res.setFixedWidth(145)
+        cb_res.setFixedWidth(130)
         cb_res.currentIndexChanged.connect(self._on_settings_change)
         r2.addWidget(cb_res)
 
         r2.addWidget(QLabel(get_text(L, "lbl_bitrate")))
         txt_b = QLineEdit(str(default_bitrate))
-        txt_b.setFixedWidth(80)
+        txt_b.setFixedWidth(58)
         txt_b.setPlaceholderText("Auto")
         txt_b.textChanged.connect(self._on_settings_change)
         r2.addWidget(txt_b)
@@ -1517,8 +1602,8 @@ class ModernVideoOptimizer(QMainWindow):
         # Botón AUTO para códec óptimo y bitrate de calidad equivalente
         btn_auto = QPushButton(get_text(L, "btn_auto"))
         btn_auto.setToolTip(get_text(L, "btn_auto_tooltip"))
-        btn_auto.setFixedSize(70, 26)
-        btn_auto.setStyleSheet("background-color: #1a2a40; color: #89b4fa; border: 1px solid #2b456e; border-radius: 5px; font-weight: bold; font-size: 11px;")
+        btn_auto.setFixedSize(76, 26)
+        btn_auto.setStyleSheet("background-color: #17243d; color: #7dcfff; border: 1px solid #294c7a; border-radius: 6px; font-weight: 800; font-size: 11px;")
         btn_auto.clicked.connect(lambda _, b=txt_b, c=cb_codec, r=cb_res: self._auto_configure_profile(b, c, r))
         r2.addWidget(btn_auto)
 
@@ -1568,16 +1653,16 @@ class ModernVideoOptimizer(QMainWindow):
     def _reindex_version_cards(self):
         """Actualiza títulos, colores y visibilidad de eliminación de las versiones activas."""
         L = self.current_lang
-        accents = ["#89b4fa", "#cba6f7", "#fab387", "#a6e3a1", "#f5c2e7"]
+        accents = ["#7dcfff", "#bb9af7", "#ff9e64", "#73daca", "#f7768e"]
         total = len(self.active_version_widgets)
 
         for idx, item in enumerate(self.active_version_widgets, 1):
             accent_color = accents[(idx - 1) % len(accents)]
-            item["frame"].setStyleSheet(f"QFrame.SubCardFrame {{ border-left: 3px solid {accent_color}; }}")
+            item["frame"].setStyleSheet(f"QFrame.SubCardFrame {{ border-left: 4px solid {accent_color}; background-color: #161724; border-radius: 8px; border-top: 1px solid #23273c; border-right: 1px solid #23273c; border-bottom: 1px solid #23273c; }}")
             suffix = get_text(L, "version_primary") if idx == 1 else get_text(L, "version_secondary")
             title_txt = get_text(L, "version_title", idx=idx) + suffix
             item["lbl_title"].setText(title_txt)
-            item["lbl_title"].setStyleSheet(f"font-weight: bold; color: {accent_color}; font-size: 11px;")
+            item["lbl_title"].setStyleSheet(f"font-weight: 800; color: {accent_color}; font-size: 11px; letter-spacing: 0.5px;")
             if "btn_del" in item and item["btn_del"]:
                 item["btn_del"].setText(get_text(L, "btn_del"))
                 item["btn_del"].setVisible(total > 1 and idx > 1)
@@ -1734,14 +1819,14 @@ class ModernVideoOptimizer(QMainWindow):
             item_folder = QTableWidgetItem(folder_name)
             item_folder.setData(Qt.ItemDataRole.UserRole, f"group_{d_path}")
             item_folder.setFont(QFont("Segoe UI", 10, QFont.Weight.Bold))
-            item_folder.setForeground(QColor("#7ec8ff"))
-            item_folder.setBackground(QColor("#18223c" if not is_multi else "#241b3c"))
+            item_folder.setForeground(QColor("#7dcfff"))
+            item_folder.setBackground(QColor("#1c2035"))
             self.table_lib.setItem(row_idx, 0, item_folder)
 
             for col_c in range(1, 12):
                 it = QTableWidgetItem("" if col_c != 1 else get_text(L, "status_type_folder"))
-                it.setBackground(QColor("#18223c" if not is_multi else "#241b3c"))
-                it.setForeground(QColor("#7ec8ff"))
+                it.setBackground(QColor("#1c2035"))
+                it.setForeground(QColor("#7dcfff"))
                 self.table_lib.setItem(row_idx, col_c, it)
             row_idx += 1
 
@@ -1752,12 +1837,12 @@ class ModernVideoOptimizer(QMainWindow):
                 eff_ver = self._get_effective_versions_for_video(d_path, v_path)
                 is_v_multi = len(eff_ver) > 1
 
-                bg_color = QColor("#0a0b12" if row_idx % 2 == 0 else "#10121d")
-                fg_color = QColor("#cdd6f4")
+                bg_color = QColor("#11121c" if row_idx % 2 == 0 else "#151724")
+                fg_color = QColor("#c0caf5")
                 if has_custom:
-                    fg_color = QColor("#fdba74")
+                    fg_color = QColor("#ff9e64")
                 elif is_v_multi:
-                    fg_color = QColor("#f5bde6")
+                    fg_color = QColor("#bb9af7")
 
                 item_vid = QTableWidgetItem(f"    {v_meta['filename']}")
                 item_vid.setData(Qt.ItemDataRole.UserRole, f"vid_{v_path}")
@@ -1768,17 +1853,17 @@ class ModernVideoOptimizer(QMainWindow):
                 self.table_lib.setItem(row_idx, 0, item_vid)
 
                 status_txt = get_text(L, "status_already_encoded") if v_meta.get("is_already_encoded") else get_text(L, "status_pending")
-                stat_col = QColor("#89b4fa" if v_meta.get("is_already_encoded") else "#a6e3a1")
+                stat_col = QColor("#7aa2f7" if v_meta.get("is_already_encoded") else "#73daca")
 
                 data_cols = [
                     (v_meta.get("resolution_tag", "Original"), fg_color),
                     (status_txt, stat_col),
                     (v_meta.get("video_codec", "N/A"), fg_color),
                     (f"{v_meta.get('bitrate_kbps', 0)} kbps", fg_color),
-                    ("HDR/Dolby" if v_meta.get("is_hdr") else "SDR", QColor("#f9e2af" if v_meta.get("is_hdr") else "#6c7086")),
+                    ("HDR/Dolby" if v_meta.get("is_hdr") else "SDR", QColor("#e0af68" if v_meta.get("is_hdr") else "#636b8e")),
                     (f"{v_meta.get('size_mb', 0)} MB", fg_color),
                     (f"{self._estimate_v1_size(v_meta, eff_ver)} MB", fg_color),
-                    (f"-{self._estimate_savings_pct(v_meta, eff_ver)}%", QColor("#a6e3a1")),
+                    (f"-{self._estimate_savings_pct(v_meta, eff_ver)}%", QColor("#73daca")),
                     (self._format_versions_plan(eff_ver), fg_color),
                     (self._format_audio_plan(d_path, v_meta), fg_color),
                     (self._format_sub_plan(d_path, v_meta), fg_color)
@@ -2210,20 +2295,20 @@ class ModernVideoOptimizer(QMainWindow):
             self.table_q.insertRow(idx)
             st = job["status"]
 
-            bg = QColor("#0a0b12" if idx % 2 == 0 else "#10121d")
-            fg = QColor("#cdd6f4")
+            bg = QColor("#11121c" if idx % 2 == 0 else "#151724")
+            fg = QColor("#c0caf5")
             if "Encoding" in st or "Codificando" in st:
-                bg = QColor("#2a2412")
-                fg = QColor("#f9e2af")
+                bg = QColor("#2a2318")
+                fg = QColor("#e0af68")
             elif "Pause" in st or "Pausado" in st:
-                bg = QColor("#2a1b12")
-                fg = QColor("#fab387")
+                bg = QColor("#2a1e18")
+                fg = QColor("#ff9e64")
             elif "Completed" in st or "Listo" in st:
-                bg = QColor("#12251a")
-                fg = QColor("#a6e3a1")
+                bg = QColor("#152420")
+                fg = QColor("#73daca")
             elif "Error" in st:
-                bg = QColor("#2a1218")
-                fg = QColor("#f38ba8")
+                bg = QColor("#2c1a24")
+                fg = QColor("#f7768e")
 
             ver_label = f"V{job['v_num']+1}: {job['v_cfg']['codec']} ({job['v_cfg']['res']}) @ {job['v_cfg']['bitrate']}k"
 
@@ -2393,13 +2478,13 @@ class ModernVideoOptimizer(QMainWindow):
         if not self.encoding_thread._is_paused:
             self.encoding_thread.pause()
             self.btn_pause.setText(get_text(L, "btn_resume"))
-            self.btn_pause.setStyleSheet("background-color: #a6e3a1; color: #08090d;")
+            self.btn_pause.setStyleSheet("background-color: #73daca; color: #0d0e15; border-radius: 8px; font-weight: 800;")
             self.lbl_status.setText("Encoding PAUSED.")
             self.lbl_speedometer.setText(get_text(L, "status_paused"))
         else:
             self.encoding_thread.resume()
             self.btn_pause.setText(get_text(L, "btn_pause"))
-            self.btn_pause.setStyleSheet("background-color: #f9e2af; color: #08090d;")
+            self.btn_pause.setStyleSheet("background-color: #e0af68; color: #0d0e15; border-radius: 8px; font-weight: 800;")
             self.lbl_status.setText("Encoding RESUMED.")
 
     def stop_encoding(self):
